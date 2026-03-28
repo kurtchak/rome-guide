@@ -1,0 +1,350 @@
+:root {
+    --bg: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-surface: #0f3460;
+    --accent: #e94560;
+    --accent-light: #ff6b81;
+    --text: #eee;
+    --text-muted: #a0a0b0;
+    --radius: 12px;
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+}
+
+#app {
+    padding-bottom: calc(80px + var(--safe-bottom));
+}
+
+/* Header */
+.header {
+    padding: 20px 16px 12px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Filter tabs */
+.filters {
+    display: flex;
+    gap: 8px;
+    padding: 0 16px 16px;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: var(--bg-card);
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/* Place grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 12px 24px;
+}
+
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        padding: 0 16px 24px;
+    }
+}
+
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
+.card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:active {
+    transform: scale(0.97);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-surface);
+    font-size: 2.5rem;
+}
+
+.card-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px 10px 10px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.card-category {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-light);
+    margin-bottom: 2px;
+}
+
+/* Detail page */
+.detail {
+    padding-bottom: 100px;
+}
+
+.detail-back {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-hero {
+    width: 100%;
+    height: 45vw;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.detail-hero-placeholder {
+    width: 100%;
+    height: 45vw;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-surface);
+    font-size: 4rem;
+}
+
+.detail-content {
+    padding: 20px 16px;
+}
+
+.detail-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+/* Info table */
+.info-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.info-table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.info-table td {
+    padding: 8px 0;
+    font-size: 0.88rem;
+    vertical-align: top;
+}
+
+.info-table td:first-child {
+    color: var(--text-muted);
+    width: 110px;
+    padding-right: 12px;
+    font-weight: 500;
+}
+
+/* Tier selector */
+.tier-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tier-btn {
+    flex: 1;
+    background: var(--bg-card);
+    border: 2px solid transparent;
+    color: var(--text-muted);
+    padding: 10px 8px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.tier-btn.active {
+    border-color: var(--accent);
+    color: var(--accent-light);
+    background: rgba(233, 69, 96, 0.1);
+}
+
+.tier-btn span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Guide text */
+.guide-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+}
+
+/* Audio bar */
+.audio-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 16px calc(8px + var(--safe-bottom));
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.audio-progress {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.audio-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.audio-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.audio-btn:active {
+    background: rgba(255,255,255,0.1);
+}
+
+.audio-btn-play {
+    background: var(--accent);
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+}
+
+.audio-btn-play:active {
+    background: var(--accent-light);
+}
+
+.audio-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: var(--text-muted);
+}
