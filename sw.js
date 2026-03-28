@@ -1,4 +1,4 @@
-const CACHE_NAME = 'audiosprievodca-v1';
+const CACHE_NAME = 'audiosprievodca-v2';
 
 const SHELL_ASSETS = [
     './',
@@ -6,6 +6,7 @@ const SHELL_ASSETS = [
     './css/style.css',
     './js/data.js',
     './js/audio.js',
+    './js/proximity.js',
     './js/app.js',
     './js/views/list.js',
     './js/views/detail.js',
@@ -41,6 +42,26 @@ self.addEventListener('fetch', (event) => {
                 }
                 return response;
             });
+        })
+    );
+});
+
+// Klik na notifikáciu -> otvorí detail miesta
+self.addEventListener('notificationclick', (event) => {
+    event.notification.close();
+
+    const placeId = event.notification.data?.placeId;
+    const url = placeId ? `/#/miesto/${placeId}` : '/';
+
+    event.waitUntil(
+        clients.matchAll({ type: 'window', includeUncontrolled: true }).then(windowClients => {
+            for (const client of windowClients) {
+                if (client.url.includes(self.registration.scope)) {
+                    client.navigate(url);
+                    return client.focus();
+                }
+            }
+            return clients.openWindow(url);
         })
     );
 });

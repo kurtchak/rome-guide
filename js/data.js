@@ -4,6 +4,7 @@ const PLACES = [
         id: "bazilika-sv-petra",
         name: "Bazilika svätého Petra",
         category: "vatikan",
+        coords: { lat: 41.9022, lon: 12.4539 },
         image: "img/places/bazilika-sv-petra.jpg",
         emoji: "\u26ea",
         info: {
@@ -24,6 +25,7 @@ const PLACES = [
         id: "sikstinska-kaplnka",
         name: "Sixtínska kaplnka",
         category: "vatikan",
+        coords: { lat: 41.9029, lon: 12.4545 },
         image: "img/places/sikstinska-kaplnka.jpg",
         emoji: "\ud83c\udfa8",
         info: {
@@ -44,6 +46,7 @@ const PLACES = [
         id: "vatikanske-muzea",
         name: "Vatikánske múzeá",
         category: "vatikan",
+        coords: { lat: 41.9065, lon: 12.4536 },
         image: "img/places/vatikanske-muzea.jpg",
         emoji: "\ud83c\udfdb\ufe0f",
         info: {
@@ -64,6 +67,7 @@ const PLACES = [
         id: "pieta",
         name: "Pieta (Michelangelo)",
         category: "vatikan",
+        coords: { lat: 41.9021, lon: 12.4536 },
         image: "img/places/pieta.jpg",
         emoji: "\ud83d\ude4f",
         info: {
@@ -84,6 +88,7 @@ const PLACES = [
         id: "namestie-sv-petra",
         name: "Námestie svätého Petra",
         category: "vatikan",
+        coords: { lat: 41.9023, lon: 12.4568 },
         image: "img/places/namestie-sv-petra.jpg",
         emoji: "\u2b55",
         info: {
@@ -104,6 +109,7 @@ const PLACES = [
         id: "rafaelove-izby",
         name: "Rafaelove izby",
         category: "vatikan",
+        coords: { lat: 41.9043, lon: 12.4547 },
         image: "img/places/rafaelove-izby.jpg",
         emoji: "\ud83d\uddbc\ufe0f",
         info: {
@@ -124,6 +130,7 @@ const PLACES = [
         id: "laokoon",
         name: "Súsošie Laokoóna",
         category: "vatikan",
+        coords: { lat: 41.9063, lon: 12.4538 },
         image: "img/places/laokoon.jpg",
         emoji: "\ud83d\uddff",
         info: {
@@ -146,6 +153,7 @@ const PLACES = [
         id: "koloseum",
         name: "Koloseum",
         category: "rim",
+        coords: { lat: 41.8902, lon: 12.4922 },
         image: "img/places/koloseum.jpg",
         emoji: "\ud83c\udfdf\ufe0f",
         info: {
@@ -166,6 +174,7 @@ const PLACES = [
         id: "panteon",
         name: "Panteón",
         category: "rim",
+        coords: { lat: 41.8986, lon: 12.4769 },
         image: "img/places/panteon.jpg",
         emoji: "\ud83c\udfdb\ufe0f",
         info: {
@@ -186,6 +195,7 @@ const PLACES = [
         id: "fontana-di-trevi",
         name: "Fontána di Trevi",
         category: "rim",
+        coords: { lat: 41.9009, lon: 12.4833 },
         image: "img/places/fontana-di-trevi.jpg",
         emoji: "\u26f2",
         info: {
@@ -206,6 +216,7 @@ const PLACES = [
         id: "spanielske-schody",
         name: "Španielske schody",
         category: "rim",
+        coords: { lat: 41.9060, lon: 12.4828 },
         image: "img/places/spanielske-schody.jpg",
         emoji: "\ud83e\udea7",
         info: {
@@ -226,6 +237,7 @@ const PLACES = [
         id: "rimske-forum",
         name: "Rímske fórum",
         category: "rim",
+        coords: { lat: 41.8925, lon: 12.4853 },
         image: "img/places/rimske-forum.jpg",
         emoji: "\ud83c\udfdb\ufe0f",
         info: {
@@ -246,6 +258,7 @@ const PLACES = [
         id: "anjelsky-hrad",
         name: "Anjelský hrad",
         category: "rim",
+        coords: { lat: 41.9031, lon: 12.4663 },
         image: "img/places/anjelsky-hrad.jpg",
         emoji: "\ud83c\udff0",
         info: {
@@ -266,6 +279,7 @@ const PLACES = [
         id: "piazza-navona",
         name: "Piazza Navona",
         category: "rim",
+        coords: { lat: 41.8992, lon: 12.4730 },
         image: "img/places/piazza-navona.jpg",
         emoji: "\u26f2",
         info: {
@@ -286,6 +300,7 @@ const PLACES = [
         id: "piazza-venezia",
         name: "Piazza Venezia",
         category: "rim",
+        coords: { lat: 41.8958, lon: 12.4823 },
         image: "img/places/piazza-venezia.jpg",
         emoji: "\ud83c\udfc6",
         info: {
@@ -306,6 +321,7 @@ const PLACES = [
         id: "bocca-della-verita",
         name: "Bocca della Verità",
         category: "rim",
+        coords: { lat: 41.8882, lon: 12.4813 },
         image: "img/places/bocca-della-verita.jpg",
         emoji: "\ud83d\ude36",
         info: {
@@ -326,6 +342,7 @@ const PLACES = [
         id: "campo-de-fiori",
         name: "Campo de' Fiori",
         category: "rim",
+        coords: { lat: 41.8956, lon: 12.4722 },
         image: "img/places/campo-de-fiori.jpg",
         emoji: "\ud83c\udf3b",
         info: {
