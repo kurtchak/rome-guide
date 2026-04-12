@@ -349,6 +349,75 @@ body {
     color: var(--text-muted);
 }
 
+/* Legendy a zaujímavosti */
+.legends-section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legends-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 16px 0;
+    letter-spacing: 0.02em;
+}
+
+.legends-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--bg-card);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+    background: var(--bg-surface);
+    border-color: rgba(233, 69, 96, 0.3);
+}
+
+.legend-item.active {
+    background: rgba(233, 69, 96, 0.12);
+    border-color: var(--accent);
+}
+
+.legend-play {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    padding-left: 3px;
+}
+
+.legend-item.active .legend-play {
+    background: var(--accent-light, #ff6b81);
+}
+
+.legend-title {
+    flex: 1;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
 /* Toast notifikácie */
 .toast-container {
     position: fixed;

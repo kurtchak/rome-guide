@@ -10,6 +10,7 @@ const TIERS = [
 const TIER_TEXT_MAP = { '30s': 'short', '1min': 'medium', '3min': 'long' };
 
 let currentTier = '30s';
+let currentLegendId = null;
 let isPlaying = false;
 
 export function renderDetail(container, placeId) {
@@ -20,7 +21,23 @@ export function renderDetail(container, placeId) {
     }
 
     currentTier = '30s';
+    currentLegendId = null;
     isPlaying = false;
+
+    const legends = place.legends || [];
+    const legendsSection = legends.length ? `
+        <div class="legends-section">
+            <h2 class="legends-title">Legendy a zaujímavosti</h2>
+            <div class="legends-list">
+                ${legends.map(l => `
+                    <div class="legend-item" data-legend="${l.id}">
+                        <div class="legend-play">&#9654;</div>
+                        <div class="legend-title">${l.title}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    ` : '';
 
     container.innerHTML = `
         <button class="detail-back" id="back-btn">&#8592;</button>
@@ -44,6 +61,7 @@ export function renderDetail(container, placeId) {
                 `).join('')}
             </div>
             <div class="guide-text" id="guide-text">${place.texts.short}</div>
+            ${legendsSection}
         </div>
         <div class="audio-bar">
             <div class="audio-progress" id="audio-progress">
@@ -59,35 +77,47 @@ export function renderDetail(container, placeId) {
         </div>
     `;
 
-    // Back button
     document.getElementById('back-btn').addEventListener('click', () => {
         audio.stop();
         location.hash = '/';
     });
 
-    // Tier buttons
     container.querySelectorAll('.tier-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             currentTier = btn.dataset.tier;
-            // Update active state
+            currentLegendId = null;
             container.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            // Update text
+            container.querySelectorAll('.legend-item').forEach(li => li.classList.remove('active'));
             document.getElementById('guide-text').textContent = place.texts[TIER_TEXT_MAP[currentTier]];
-            // Restart audio with new tier
             audio.play(place.id, currentTier);
             isPlaying = true;
             updatePlayButton();
         });
     });
 
-    // Audio controls
+    container.querySelectorAll('.legend-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const legendId = item.dataset.legend;
+            currentLegendId = legendId;
+            container.querySelectorAll('.legend-item').forEach(li => li.classList.remove('active'));
+            item.classList.add('active');
+            container.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
+            audio.playLegend(place.id, legendId);
+            isPlaying = true;
+            updatePlayButton();
+        });
+    });
+
     document.getElementById('btn-play').addEventListener('click', () => {
         if (!isPlaying && !audio.getState().playing) {
-            // First play or resume
             const state = audio.getState();
-            if (state.placeId === place.id && state.tier === currentTier) {
+            const matchesMain = state.placeId === place.id && state.tier === currentTier && !currentLegendId;
+            const matchesLegend = state.placeId === place.id && state.legendId === currentLegendId && currentLegendId;
+            if (matchesMain || matchesLegend) {
                 audio.toggle();
+            } else if (currentLegendId) {
+                audio.playLegend(place.id, currentLegendId);
             } else {
                 audio.play(place.id, currentTier);
             }
@@ -107,14 +137,12 @@ export function renderDetail(container, placeId) {
         audio.skip(10);
     });
 
-    // Progress bar click to seek
     document.getElementById('audio-progress').addEventListener('click', (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const fraction = (e.clientX - rect.left) / rect.width;
         audio.seekTo(Math.max(0, Math.min(1, fraction)));
     });
 
-    // Audio callbacks
     audio.onTimeUpdate((state) => {
         const fill = document.getElementById('audio-progress-fill');
         const timeCurrent = document.getElementById('audio-time-current');
@@ -135,7 +163,6 @@ export function renderDetail(container, placeId) {
         if (fill) fill.style.width = '100%';
     });
 
-    // Auto-play 30s version
     setTimeout(() => {
         audio.play(place.id, '30s');
         isPlaying = true;
