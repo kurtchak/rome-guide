@@ -36,6 +36,17 @@ IMAGES = {
     "piazza-venezia": "Vittoriano_Altare_della_Patria_2013-09-16.jpg",
     "bocca-della-verita": "Età_imperiale,_chiusino_a_forma_di_mascherone_di_divinità_fluviale,_detta_bocca_della_verità,_collocata_qui_nel_1632.jpg",
     "campo-de-fiori": "Campo_dei_Fiori.jpg",
+    # Nové miesta
+    "san-giovanni-laterano": "San_Giovanni_in_Laterano_2021.jpg",
+    "santa-maria-maggiore": "Santa_Maria_Maggiore_Front.JPG",
+    "san-pietro-in-vincoli": "Moses_San_Pietro_in_Vincoli.jpg",
+    "palatin": "Palatine_Hill_Rome.jpg",
+    "galeria-borghese": "Galleria_borghese_facade.jpg",
+    "kapitolske-muzea": "Piazza_del_Campidoglio.jpg",
+    "trastevere": "Santa_Maria_in_Trastevere.jpg",
+    "cirkus-maximus": "Circus_Maximus_Rome.jpg",
+    "svata-schody": "Scala_Santa_1.jpg",
+    "piazza-del-popolo": "Piazza_del_Popolo_Rome.jpg",
 }
 
 WIKI_API = "https://commons.wikimedia.org/w/api.php"
