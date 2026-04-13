@@ -24,6 +24,15 @@ export function renderDetail(container, placeId) {
     currentLegendId = null;
     isPlaying = false;
 
+    const navButton = place.coords ? `
+        <a class="nav-btn"
+           href="https://www.google.com/maps/dir/?api=1&destination=${place.coords.lat},${place.coords.lon}&travelmode=walking"
+           target="_blank"
+           rel="noopener noreferrer">
+            🧭 Navigovať sem
+        </a>
+    ` : '';
+
     const legends = place.legends || [];
     const legendsSection = legends.length ? `
         <div class="legends-section">
@@ -57,6 +66,7 @@ export function renderDetail(container, placeId) {
                     return `<tr><td>${key}</td><td>${cell}</td></tr>`;
                 }).join('')}
             </table>
+            ${navButton}
             <div class="tier-selector">
                 ${TIERS.map(t => `
                     <button class="tier-btn ${t.key === currentTier ? 'active' : ''}" data-tier="${t.key}">
