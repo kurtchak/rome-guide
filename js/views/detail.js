@@ -49,9 +49,13 @@ export function renderDetail(container, placeId) {
         <div class="detail-content">
             <h1>${place.name}</h1>
             <table class="info-table">
-                ${Object.entries(place.info).map(([key, val]) => `
-                    <tr><td>${key}</td><td>${val}</td></tr>
-                `).join('')}
+                ${Object.entries(place.info).map(([key, val]) => {
+                    const isUrl = typeof val === 'string' && /^https?:\/\//.test(val);
+                    const cell = isUrl
+                        ? `<a href="${val}" target="_blank" rel="noopener noreferrer">${val.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a>`
+                        : val;
+                    return `<tr><td>${key}</td><td>${cell}</td></tr>`;
+                }).join('')}
             </table>
             <div class="tier-selector">
                 ${TIERS.map(t => `

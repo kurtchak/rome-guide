@@ -1,4 +1,4 @@
-const CACHE_NAME = 'audiosprievodca-v3';
+const CACHE_NAME = 'audiosprievodca-v4';
 
 const SHELL_ASSETS = [
     './',

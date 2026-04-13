@@ -222,6 +222,16 @@ body {
     font-weight: 500;
 }
 
+.info-table a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.info-table a:hover {
+    text-decoration: underline;
+}
+
 /* Tier selector */
 .tier-selector {
     display: flex;

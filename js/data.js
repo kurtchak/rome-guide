@@ -11,7 +11,11 @@ const PLACES = [
             "Postavené": "1506 \u2013 1626",
             "Architekt": "Bramante, Michelangelo, Maderno, Bernini",
             "Štýl": "Renesancia, Barok",
-            "Význam": "Najväčší kresťanský kostol na svete"
+            "Význam": "Najväčší kresťanský kostol na svete",
+            "Vstup": "zadarmo",
+            "Rad": "obvykle 1–2 h (bezpečnostná kontrola)",
+            "Extra": "kupola 10–15 €",
+            "Web": "https://www.basilicasanpietro.va"
         },
         texts: {
             short: "Bazilika svätého Petra je najväčší a najvýznamnejší kresťanský chrám na svete. Stojí na mieste, kde bol podľa tradície pochovaný apoštol Peter. Stavba trvala 120 rokov a podieľali sa na nej najväčší umelci renesancie vrátane Michelangela, ktorý navrhol jej ikonickú kupolu. Bazilika pojme až 20 000 veriacich.",
@@ -37,7 +41,10 @@ const PLACES = [
             "Postavené": "1473 \u2013 1481",
             "Architekt": "Baccio Pontelli, Giovanni de' Dolci",
             "Štýl": "Renesancia",
-            "Význam": "Michelangelove stropné fresky, miesto voľby pápežov"
+            "Význam": "Michelangelove stropné fresky, miesto voľby pápežov",
+            "Vstup": "v rámci Vatikánskych múzeí (20 €)",
+            "Rad": "hodiny, odporúča sa rezervácia online",
+            "Web": "https://www.museivaticani.va"
         },
         texts: {
             short: "Sixtínska kaplnka je najslávnejšia kaplnka na svete, známa najmä vďaka Michelangelovým stropným freskám. Maľba Stvorenie Adama s takmer sa dotýkajúcimi prstami Boha a človeka sa stala jedným z najrozpoznateľnejších obrazov v dejinách umenia. Dodnes sa tu konajú konkláve \u2014 voľby nového pápeža.",
@@ -63,7 +70,11 @@ const PLACES = [
             "Založené": "1506",
             "Zbierky": "Vyše 70 000 diel, 20 000 vystavených",
             "Štýl": "Rôzne \u2014 od staroveku po súčasnosť",
-            "Význam": "Jedna z najväčších umeleckých zbierok na svete"
+            "Význam": "Jedna z najväčších umeleckých zbierok na svete",
+            "Vstup": "20 €",
+            "Rad": "1–3 h bez rezervácie",
+            "Extra": "zadarmo poslednú nedeľu v mesiaci",
+            "Web": "https://www.museivaticani.va"
         },
         texts: {
             short: "Vatikánske múzeá uchovávajú jednu z najväčších umeleckých zbierok na svete. Zahŕňajú 54 galérií s vyše 20 000 vystavenými dielami od staroegyptských artefaktov po moderné umenie. Ročne ich navštívi viac ako 6 miliónov ľudí, čo z nich robí jedny z najnavštevovanejších múzeí na svete.",
@@ -88,7 +99,10 @@ const PLACES = [
             "Vytvorené": "1498 \u2013 1499",
             "Autor": "Michelangelo Buonarroti",
             "Materiál": "Carrarský mramor",
-            "Význam": "Michelangelovo jediné podpísané dielo"
+            "Význam": "Michelangelovo jediné podpísané dielo",
+            "Vstup": "zadarmo (v Bazilike sv. Petra)",
+            "Rad": "ako pri bazilike",
+            "Web": "https://www.basilicasanpietro.va"
         },
         texts: {
             short: "Pieta je jedno z najslávnejších sochárskych diel v histórii. Michelangelo ju vytvoril z jediného bloku carrarského mramoru, keď mal len 24 rokov. Zobrazuje Pannu Máriu držiacu telo mŕtveho Krista. Je to jediné dielo, ktoré Michelangelo podpísal \u2014 svoj podpis vytesal na pás cez Máriinu hruď.",
@@ -114,7 +128,9 @@ const PLACES = [
             "Postavené": "1656 \u2013 1667",
             "Architekt": "Gian Lorenzo Bernini",
             "Štýl": "Barok",
-            "Význam": "Hlavné vatikánske námestie, miesto pápežských audiencií"
+            "Význam": "Hlavné vatikánske námestie, miesto pápežských audiencií",
+            "Vstup": "zadarmo",
+            "Web": "https://www.vatican.va"
         },
         texts: {
             short: "Námestie svätého Petra je monumentálny priestor pred Bazilikou svätého Petra, navrhnutý Berninim v sedemnástom storočí. Obrovská kolonáda s 284 stĺpmi a 140 sochami svätých vytvára symbolické objatie cirkvi. V strede stojí egyptský obelisk starý 4 000 rokov, ktorý sem dal previesť pápež Sixtus Piaty.",
@@ -139,7 +155,9 @@ const PLACES = [
             "Vytvorené": "1509 \u2013 1524",
             "Autor": "Rafael Santi a dielňa",
             "Štýl": "Vrcholná renesancia",
-            "Význam": "Aténska škola \u2014 ikona renesančného umenia"
+            "Význam": "Aténska škola \u2014 ikona renesančného umenia",
+            "Vstup": "v rámci Vatikánskych múzeí (20 €)",
+            "Web": "https://www.museivaticani.va"
         },
         texts: {
             short: "Rafaelove izby sú štyri miestnosti vo Vatikánskom paláci, vyzdobené freskami Rafaela Santiho a jeho dielne. Najslávnejšou je Aténska škola, zobrazujúca najväčších filozofov staroveku. Platón má tvár Leonarda da Vinciho a zamračený Herakleitos je portrétom Michelangela.",
@@ -164,7 +182,9 @@ const PLACES = [
             "Vytvorené": "cca 1. storočie pred Kr.",
             "Autor": "Agesandros, Polydóros, Athanodóros (Rhodos)",
             "Materiál": "Mramor",
-            "Význam": "Jedno z najvýznamnejších diel antického sochárstva"
+            "Význam": "Jedno z najvýznamnejších diel antického sochárstva",
+            "Vstup": "v rámci Vatikánskych múzeí (20 €)",
+            "Web": "https://www.museivaticani.va"
         },
         texts: {
             short: "Súsošie Laokoóna zobrazuje trójskeho kňaza a jeho dvoch synov v smrteľnom zápase s obrovskými hadmi. Toto antické dielo z prvého storočia pred Kristom bolo objavené v Ríme v roku 1506 a jeho nájdenie sa považuje za začiatok Vatikánskych múzeí. Michelangelo bol prítomný pri jeho odkrytí.",
@@ -191,7 +211,10 @@ const PLACES = [
             "Postavené": "70 \u2013 80 n. l.",
             "Staviteľ": "Cisári Vespasián a Títus",
             "Štýl": "Rímska architektúra",
-            "Význam": "Najväčší amfiteáter staroveku, symbol Ríma"
+            "Význam": "Najväčší amfiteáter staroveku, symbol Ríma",
+            "Vstup": "18 € (kombi Palatín + Fórum, platí 24 h)",
+            "Rad": "dlhý, odporúča sa rezervácia online",
+            "Web": "https://parcocolosseo.it"
         },
         texts: {
             short: "Koloseum je najväčší amfiteáter staroveku a symbol večného Ríma. Postavili ho cisári z dynastie Flaviovcov v rokoch 70 až 80 nášho letopočtu. Pojalo až 50 000 divákov, ktorí sledovali gladiátorské zápasy, boje so zvieratami a dokonca námorné bitky. Dodnes je jedným z najnavštevovanejších pamiatok na svete.",
@@ -217,7 +240,10 @@ const PLACES = [
             "Postavené": "cca 125 n. l.",
             "Staviteľ": "Cisár Hadrián",
             "Štýl": "Rímska architektúra",
-            "Význam": "Najlepšie zachovaná rímska stavba, revolučná kupola"
+            "Význam": "Najlepšie zachovaná rímska stavba, revolučná kupola",
+            "Vstup": "5 €",
+            "Extra": "zadarmo počas sv. omší a pre obyvateľov Ríma",
+            "Web": "https://www.pantheonroma.com"
         },
         texts: {
             short: "Panteón je najlepšie zachovaná stavba starovekého Ríma a architektonický zázrak. Jeho kupola s priemerom 43 metrov bola najväčšou na svete celých 1 300 rokov. V jej vrchole je okrúhly otvor \u2014 oculus \u2014 jediný zdroj svetla v celej budove. Dnes slúži ako kostol a je tu pochovaný maliar Rafael.",
@@ -243,7 +269,8 @@ const PLACES = [
             "Postavené": "1732 \u2013 1762",
             "Architekt": "Nicola Salvi",
             "Štýl": "Barok",
-            "Význam": "Najslávnejšia fontána na svete"
+            "Význam": "Najslávnejšia fontána na svete",
+            "Vstup": "zadarmo"
         },
         texts: {
             short: "Fontána di Trevi je najväčšia a najslávnejšia fontána v Ríme. Zobrazuje boha mora Neptúna na kočiari ťahanom morskými koňmi. Podľa tradície, ak hodíte mincu pravou rukou cez ľavé rameno do fontány, zaručí vám to návrat do Ríma. Ročne sa z fontány vyloví vyše milión eur.",
@@ -268,7 +295,9 @@ const PLACES = [
             "Postavené": "1723 \u2013 1726",
             "Architekt": "Francesco de Sanctis",
             "Štýl": "Barok",
-            "Význam": "Ikonické rímske schodisko, centrum módy"
+            "Význam": "Ikonické rímske schodisko, centrum módy",
+            "Vstup": "zadarmo",
+            "Poznámka": "zákaz sedenia na schodoch, pokuta do 400 €"
         },
         texts: {
             short: "Španielske schody sú najslávnejšie schodisko v Európe. Spájajú Piazza di Spagna s kostolom Trinità dei Monti na vrchu. Majú 135 schodov a ich elegantný tvar motýlích krídel z nich robí obľúbené miesto stretávania. Od roku 2019 je zakázané na nich sedieť \u2014 pokuta je až 400 eur.",
@@ -293,7 +322,10 @@ const PLACES = [
             "Obdobie": "7. stor. pred Kr. \u2013 7. stor. n. l.",
             "Funkcia": "Politické, náboženské a obchodné centrum",
             "Štýl": "Rímska architektúra",
-            "Význam": "Centrum starovekej Rímskej ríše"
+            "Význam": "Centrum starovekej Rímskej ríše",
+            "Vstup": "18 € (kombi Koloseum + Palatín)",
+            "Rad": "mierny, odporúča sa rezervácia",
+            "Web": "https://parcocolosseo.it"
         },
         texts: {
             short: "Rímske fórum bolo politickým, náboženským a obchodným srdcom Rímskej ríše. Na tomto relatívne malom priestore sa odohrávali najdôležitejšie udalosti antického sveta \u2014 voľby, súdne procesy, víťazné pochody a slávnostné reči. Dnes sú to evokatívne ruiny s chrámami, oblúkmi a bazilikami.",
@@ -318,7 +350,9 @@ const PLACES = [
             "Postavené": "135 \u2013 139 n. l.",
             "Staviteľ": "Cisár Hadrián (mauzóleum)",
             "Štýl": "Rímska architektúra, stredoveké úpravy",
-            "Význam": "Hadriánovo mauzóleum, pápežská pevnosť, múzeum"
+            "Význam": "Hadriánovo mauzóleum, pápežská pevnosť, múzeum",
+            "Vstup": "15 €",
+            "Web": "https://castelsantangelo.cultura.gov.it"
         },
         texts: {
             short: "Anjelský hrad je mohutná kruhová stavba na brehu Tiberu, pôvodne postavená ako mauzóleum cisára Hadriána. Počas stáročí slúžil ako pevnosť, väzenie a pápežská rezidencia. Názov dostal podľa legendy o archanjelovi Michalovi, ktorý sa tu zjavil počas morovej epidémie v roku 590.",
@@ -344,7 +378,8 @@ const PLACES = [
             "Obdobie": "1. stor. n. l. (pôdorys), 17. stor. (baroková podoba)",
             "Architekt": "Bernini, Borromini",
             "Štýl": "Barok",
-            "Význam": "Najkrajšie barokové námestie v Ríme"
+            "Význam": "Najkrajšie barokové námestie v Ríme",
+            "Vstup": "zadarmo"
         },
         texts: {
             short: "Piazza Navona je považovaná za najkrajšie námestie v Ríme. Jej pretiahnutý tvar kopíruje pôdorys starovekého Domiciánovho štadióna. V strede stojí Berniniho Fontána štyroch riek s obeliskom a alegorickými sochami Nílu, Gangy, Dunaja a Rio de la Plata. Na námestí sú tri fontány a barokový kostol Borrominiho.",
@@ -369,7 +404,10 @@ const PLACES = [
             "Postavené": "1885 \u2013 1935 (Vittoriano)",
             "Architekt": "Giuseppe Sacconi",
             "Štýl": "Neoklasicizmus",
-            "Význam": "Dopravný uzol Ríma, Oltár vlasti, Hrob neznámeho vojaka"
+            "Význam": "Dopravný uzol Ríma, Oltár vlasti, Hrob neznámeho vojaka",
+            "Vstup": "zadarmo",
+            "Extra": "vyhliadka Vittoriano 12 €",
+            "Web": "https://vive.cultura.gov.it"
         },
         texts: {
             short: "Piazza Venezia je centrálne námestie Ríma, dominované obrovským bielym monumentom Vittoriano \u2014 Oltárom vlasti. Pomník zasvätený prvému kráľovi zjednoteného Talianska Viktorovi Emanuelovi Druhému je známy pre svoju ohromujúcu veľkosť. Rimania ho prezývajú svadobná torta alebo písací stroj.",
@@ -394,7 +432,9 @@ const PLACES = [
             "Obdobie": "Pravdepodobne 1. stor. n. l.",
             "Umiestnenie": "Kostol Santa Maria in Cosmedin",
             "Materiál": "Mramor (priemer 1,75 m)",
-            "Význam": "Legendárny detektor lží, filmová ikona"
+            "Význam": "Legendárny detektor lží, filmová ikona",
+            "Vstup": "dobrovoľný príspevok ~2 €",
+            "Rad": "obvykle 20–45 min"
         },
         texts: {
             short: "Bocca della Verità \u2014 Ústa pravdy \u2014 je staroveký mramorový disk s tvárou, ktorá má otvorené ústa. Podľa legendy, ak do nich vložíte ruku a poviete lož, tvár vám ju odhryzne. Nachádza sa v preddverí kostola Santa Maria in Cosmedin a preslávil ju film Prázdniny v Ríme s Audrey Hepburn.",
@@ -419,7 +459,9 @@ const PLACES = [
             "Obdobie": "Stredovek \u2013 súčasnosť",
             "Funkcia": "Trhovisko, námestie",
             "Dominanta": "Socha Giordana Bruna (1889)",
-            "Význam": "Najživšie námestie Ríma, ranný trh"
+            "Význam": "Najživšie námestie Ríma, ranný trh",
+            "Vstup": "zadarmo",
+            "Extra": "tržnica 7:00–14:00 (okrem nedele)"
         },
         texts: {
             short: "Campo de' Fiori \u2014 Kvetinové pole \u2014 je najživšie námestie v Ríme. Každé ráno tu funguje farebný trh s ovocím, zeleninou, kvetmi a koreninami. V strede stojí pochmúrna socha filozofa Giordana Bruna, upáleného na tomto mieste za herézu v roku 1600. Večer sa námestie mení na centrum nočného života.",
