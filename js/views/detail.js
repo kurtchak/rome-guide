@@ -177,11 +177,7 @@ export function renderDetail(container, placeId) {
         if (fill) fill.style.width = '100%';
     });
 
-    setTimeout(() => {
-        audio.play(place.id, '30s');
-        isPlaying = true;
-        updatePlayButton();
-    }, 500);
+    updatePlayButton();
 }
 
 function updatePlayButton() {
