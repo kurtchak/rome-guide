@@ -11,7 +11,6 @@ function route() {
     const hash = location.hash || '#/';
     const match = hash.match(/^#\/miesto\/(.+)$/);
 
-    // Cleanup predchádzajúcej mapy
     if (currentRoute === 'map' && hash !== '#/mapa') {
         cleanupMap();
     }
@@ -28,6 +27,21 @@ function route() {
         renderList(app);
         currentRoute = 'list';
     }
+
+    updateTabbar();
+}
+
+function updateTabbar() {
+    const body = document.body;
+    if (currentRoute === 'detail') {
+        body.classList.remove('tabbar-visible');
+    } else {
+        body.classList.add('tabbar-visible');
+    }
+
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.tab === currentRoute);
+    });
 }
 
 window.addEventListener('hashchange', route);

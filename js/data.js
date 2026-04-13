@@ -477,7 +477,16 @@ const PLACES = [
     }
 ];
 
+// Ubytovanie (Airbnb) — zobrazí sa ako špeciálny pin na mape
+const HOME = {
+    id: "home",
+    name: "Naše ubytovanie",
+    address: "Via del Porto Fluviale 3, Rome",
+    coords: { lat: 41.8722773, lon: 12.4797176 },
+    emoji: "🏠",
+};
+
 // Make available globally for audio fallback
 window.__PLACES_DATA = PLACES;
 
-export { PLACES };
+export { PLACES, HOME };

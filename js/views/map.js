@@ -1,4 +1,4 @@
-import { PLACES } from '../data.js';
+import { PLACES, HOME } from '../data.js';
 
 const ROME_CENTER = [41.902, 12.480];
 const DEFAULT_ZOOM = 14;
@@ -55,6 +55,29 @@ export function renderMap(container) {
         `;
         marker.bindPopup(popupHtml, { maxWidth: 240 });
         bounds.push([place.coords.lat, place.coords.lon]);
+    }
+
+    // Airbnb pin
+    if (HOME?.coords) {
+        const homeIcon = L.divIcon({
+            html: `<div class="map-pin map-pin-home"><span>${HOME.emoji}</span></div>`,
+            className: 'map-pin-wrapper',
+            iconSize: [44, 52],
+            iconAnchor: [22, 50],
+            popupAnchor: [0, -46],
+        });
+        const homeMarker = L.marker([HOME.coords.lat, HOME.coords.lon], { icon: homeIcon }).addTo(map);
+        homeMarker.bindPopup(`
+            <div class="map-popup">
+                <div class="map-popup-body">
+                    <div class="map-popup-title">${HOME.name}</div>
+                    <div class="map-popup-cat">${HOME.address}</div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=${HOME.coords.lat},${HOME.coords.lon}&travelmode=walking"
+                       target="_blank" rel="noopener" class="map-popup-btn">🧭 Navigovať</a>
+                </div>
+            </div>
+        `, { maxWidth: 240 });
+        bounds.push([HOME.coords.lat, HOME.coords.lon]);
     }
 
     if (bounds.length > 1) {

@@ -29,7 +29,6 @@ export function renderList(container) {
             <button class="filter-btn ${currentFilter === 'all' ? 'active' : ''}" data-filter="all">Všetky</button>
             <button class="filter-btn ${currentFilter === 'vatikan' ? 'active' : ''}" data-filter="vatikan">Vatikán</button>
             <button class="filter-btn ${currentFilter === 'rim' ? 'active' : ''}" data-filter="rim">Rím</button>
-            <a href="#/mapa" class="filter-btn filter-map">🗺 Mapa</a>
         </div>
         <div id="nearby-section"></div>
         <div class="grid">
