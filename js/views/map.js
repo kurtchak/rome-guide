@@ -1,15 +1,22 @@
 import { PLACES, HOME } from '../data.js';
+import { FOOD } from '../food.js';
+
+const FOOD_TYPE_EMOJI = { cafe: '☕', bakery: '🥐', restaurant: '🍝' };
+const FOOD_TYPE_LABEL = { cafe: 'Kaviareň', bakery: 'Pekáreň', restaurant: 'Reštaurácia' };
 
 const ROME_CENTER = [41.902, 12.480];
 const DEFAULT_ZOOM = 14;
 
 let map = null;
 let userMarker = null;
+let foodMarkers = [];
+let showFood = false;
 
 export function renderMap(container) {
     container.innerHTML = `
         <button class="detail-back" id="back-btn">&#8592;</button>
         <div id="map" class="map-container"></div>
+        <button class="map-food-toggle ${showFood ? 'active' : ''}" id="food-toggle" title="Specialty kaviarne">☕</button>
         <button class="map-locate" id="locate-btn" title="Moja poloha">📍</button>
     `;
 
@@ -90,6 +97,14 @@ export function renderMap(container) {
 
     document.getElementById('locate-btn').addEventListener('click', locateUser);
 
+    document.getElementById('food-toggle').addEventListener('click', (e) => {
+        showFood = !showFood;
+        e.currentTarget.classList.toggle('active', showFood);
+        renderFoodMarkers();
+    });
+
+    if (showFood) renderFoodMarkers();
+
     // Try auto-locate silently
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -97,6 +112,36 @@ export function renderMap(container) {
             () => {},
             { enableHighAccuracy: true, timeout: 5000, maximumAge: 60000 }
         );
+    }
+}
+
+function renderFoodMarkers() {
+    foodMarkers.forEach(m => m.remove());
+    foodMarkers = [];
+
+    if (!showFood || !map) return;
+
+    for (const food of FOOD) {
+        const icon = L.divIcon({
+            html: `<div class="map-pin map-pin-food"><span>${FOOD_TYPE_EMOJI[food.type] || '☕'}</span></div>`,
+            className: 'map-pin-wrapper',
+            iconSize: [36, 36],
+            iconAnchor: [18, 36],
+            popupAnchor: [0, -32],
+        });
+        const marker = L.marker([food.coords.lat, food.coords.lon], { icon }).addTo(map);
+        const gmapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(food.name + ', ' + food.address + ', Rome')}`;
+        marker.bindPopup(`
+            <div class="map-popup">
+                <div class="map-popup-body">
+                    <div class="map-popup-title">${food.name}</div>
+                    <div class="map-popup-cat">${FOOD_TYPE_LABEL[food.type] || 'Podnik'} · ${food.area}</div>
+                    <div style="font-size:0.8rem;color:#555;margin-bottom:8px">${food.description}</div>
+                    <a href="${gmapsUrl}" target="_blank" rel="noopener" class="map-popup-btn">Otvoriť v Google Maps</a>
+                </div>
+            </div>
+        `, { maxWidth: 260 });
+        foodMarkers.push(marker);
     }
 }
 
@@ -133,5 +178,6 @@ export function cleanupMap() {
         map.remove();
         map = null;
         userMarker = null;
+        foodMarkers = [];
     }
 }

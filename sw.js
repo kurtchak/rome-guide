@@ -1,10 +1,11 @@
-const CACHE_NAME = 'audiosprievodca-v11';
+const CACHE_NAME = 'audiosprievodca-v12';
 
 const SHELL_ASSETS = [
     './',
     './index.html',
     './css/style.css',
     './js/data.js',
+    './js/food.js',
     './js/audio.js',
     './js/proximity.js',
     './js/app.js',

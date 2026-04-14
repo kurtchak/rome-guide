@@ -1,5 +1,26 @@
 import { PLACES } from '../data.js';
+import { FOOD } from '../food.js';
 import * as audio from '../audio.js';
+
+const FOOD_RADIUS_M = 1200;
+const FOOD_MAX_RESULTS = 3;
+const FOOD_TYPE_LABEL = { cafe: 'Kaviareň', bakery: 'Pekáreň', restaurant: 'Reštaurácia' };
+const FOOD_TYPE_EMOJI = { cafe: '☕', bakery: '🥐', restaurant: '🍝' };
+
+function haversine(a, b) {
+    const R = 6371000;
+    const dLat = (b.lat - a.lat) * Math.PI / 180;
+    const dLon = (b.lon - a.lon) * Math.PI / 180;
+    const x = Math.sin(dLat / 2) ** 2 +
+        Math.cos(a.lat * Math.PI / 180) * Math.cos(b.lat * Math.PI / 180) *
+        Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
+}
+
+function formatDistM(m) {
+    if (m < 1000) return `${Math.round(m)} m`;
+    return `${(m / 1000).toFixed(1)} km`;
+}
 
 const TIERS = [
     { key: '30s', label: '30s', desc: 'Krátky' },
@@ -31,6 +52,35 @@ export function renderDetail(container, placeId) {
            rel="noopener noreferrer">
             🧭 Navigovať sem
         </a>
+    ` : '';
+
+    // Najbližšie specialty kaviarne
+    const foodNearby = place.coords ? FOOD
+        .map(f => ({ food: f, dist: haversine(place.coords, f.coords) }))
+        .filter(x => x.dist <= FOOD_RADIUS_M)
+        .sort((a, b) => a.dist - b.dist)
+        .slice(0, FOOD_MAX_RESULTS) : [];
+
+    const foodSection = foodNearby.length ? `
+        <div class="food-section">
+            <h2 class="food-title">Pauza v okolí</h2>
+            <div class="food-hint">Tipy na specialty kávu (European Coffee Trip)</div>
+            <div class="food-list">
+                ${foodNearby.map(({ food, dist }) => {
+                    const gmapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(food.name + ', ' + food.address + ', Rome')}`;
+                    return `
+                        <a class="food-item" href="${gmapsUrl}" target="_blank" rel="noopener noreferrer">
+                            <span class="food-icon">${FOOD_TYPE_EMOJI[food.type] || '☕'}</span>
+                            <div class="food-body">
+                                <div class="food-name">${food.name}</div>
+                                <div class="food-meta">${FOOD_TYPE_LABEL[food.type] || 'Podnik'} · ${food.area} · ${formatDistM(dist)}</div>
+                                <div class="food-desc">${food.description}</div>
+                            </div>
+                        </a>
+                    `;
+                }).join('')}
+            </div>
+        </div>
     ` : '';
 
     const legends = place.legends || [];
@@ -75,6 +125,7 @@ export function renderDetail(container, placeId) {
                 `).join('')}
             </div>
             <div class="guide-text" id="guide-text">${place.texts.short}</div>
+            ${foodSection}
             ${legendsSection}
         </div>
         <div class="audio-bar">
