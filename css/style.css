@@ -359,6 +359,252 @@ body {
     color: var(--text-muted);
 }
 
+/* Plán trasy */
+.route-header {
+    padding: 16px 20px 8px;
+}
+
+.route-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--text);
+}
+
+.route-controls {
+    padding: 0 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.route-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.route-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.route-select {
+    flex: 1;
+    padding: 10px 12px;
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.route-chips {
+    flex-wrap: wrap;
+}
+
+.route-chip {
+    padding: 8px 14px;
+    background: var(--bg-card);
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.route-chip:hover {
+    background: rgba(233, 69, 96, 0.12);
+}
+
+.route-chip-clear {
+    border-color: rgba(255,255,255,0.15);
+    color: var(--text-muted);
+}
+
+.route-map {
+    height: 320px;
+    margin: 0 16px 16px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.route-pin {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.route-pin-start {
+    background: #4dabf7;
+}
+
+.route-summary {
+    padding: 0 16px 16px;
+}
+
+.route-summary-hint {
+    padding: 12px;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.route-summary-stats {
+    display: flex;
+    gap: 16px;
+    padding: 12px 16px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.route-stat {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.route-stat strong {
+    color: var(--text);
+    font-size: 1.02rem;
+    margin-right: 3px;
+}
+
+.route-gmaps-btn {
+    display: block;
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.route-stops {
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.route-stop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.route-stop:last-child {
+    border-bottom: none;
+}
+
+.route-stop-start {
+    background: rgba(77, 171, 247, 0.1);
+}
+
+.route-stop-marker {
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.route-stop-start .route-stop-marker {
+    background: #4dabf7;
+}
+
+.route-stop-name {
+    flex: 1;
+    color: var(--text);
+    font-size: 0.92rem;
+}
+
+.route-stop-dist {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.route-list {
+    padding: 0 16px calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+.route-list-title {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin: 16px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.route-item.selected {
+    border-color: rgba(233, 69, 96, 0.4);
+    background: rgba(233, 69, 96, 0.08);
+}
+
+.route-item input {
+    accent-color: var(--accent);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.route-item-emoji {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.route-item-name {
+    flex: 1;
+    color: var(--text);
+    font-size: 0.92rem;
+}
+
+.route-item-cat {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+
 /* Tab bar (bottom nav) */
 .tabbar {
     position: fixed;

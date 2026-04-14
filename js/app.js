@@ -1,6 +1,7 @@
 import { renderList } from './views/list.js';
 import { renderDetail } from './views/detail.js';
 import { renderMap, cleanupMap } from './views/map.js';
+import { renderRoute, cleanupRoute } from './views/route.js';
 import * as audio from './audio.js';
 import { startTracking } from './proximity.js';
 
@@ -11,14 +12,17 @@ function route() {
     const hash = location.hash || '#/';
     const match = hash.match(/^#\/miesto\/(.+)$/);
 
-    if (currentRoute === 'map' && hash !== '#/mapa') {
-        cleanupMap();
-    }
+    if (currentRoute === 'map' && hash !== '#/mapa') cleanupMap();
+    if (currentRoute === 'route' && hash !== '#/trasa') cleanupRoute();
 
     if (hash === '#/mapa') {
         audio.stop();
         renderMap(app);
         currentRoute = 'map';
+    } else if (hash === '#/trasa') {
+        audio.stop();
+        renderRoute(app);
+        currentRoute = 'route';
     } else if (match) {
         renderDetail(app, match[1]);
         currentRoute = 'detail';
