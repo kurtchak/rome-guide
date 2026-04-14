@@ -153,7 +153,7 @@ body {
 
 .detail-back {
     position: fixed;
-    top: 12px;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
     left: 12px;
     z-index: 10;
     background: rgba(0,0,0,0.6);
