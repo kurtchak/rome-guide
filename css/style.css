@@ -46,6 +46,33 @@ body {
     margin-top: 4px;
 }
 
+/* Prepínač destinácií */
+.dest-switch {
+    display: flex;
+    gap: 8px;
+    padding: 0 16px 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dest-btn {
+    background: var(--bg-card);
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    padding: 9px 16px;
+    border-radius: 22px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dest-btn.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
 /* Filter tabs */
 .filters {
     display: flex;
@@ -848,6 +875,18 @@ body.tabbar-visible .tabbar {
 
 .map-pin-vatikan {
     background: #fbbf24;
+}
+
+.map-pin-bergen {
+    background: #1b6ca8;   /* fjordová modrá */
+}
+
+.map-pin-stavanger {
+    background: #2a9d8f;   /* petrolejová zelená */
+}
+
+.map-pin-fjordy {
+    background: #3a7d44;   /* lesná zelená */
 }
 
 .map-pin span {

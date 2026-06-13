@@ -1,5 +1,5 @@
-import { PLACES } from '../data.js';
-import { FOOD } from '../food.js';
+import { PLACES, getActiveDestination } from '../data.js';
+import { foodForDestination } from '../food.js';
 import * as audio from '../audio.js';
 
 const FOOD_RADIUS_M = 1200;
@@ -54,8 +54,8 @@ export function renderDetail(container, placeId) {
         </a>
     ` : '';
 
-    // Najbližšie specialty kaviarne
-    const foodNearby = place.coords ? FOOD
+    // Najbližšie specialty kaviarne (podniky aktívnej destinácie)
+    const foodNearby = place.coords ? foodForDestination(getActiveDestination())
         .map(f => ({ food: f, dist: haversine(place.coords, f.coords) }))
         .filter(x => x.dist <= FOOD_RADIUS_M)
         .sort((a, b) => a.dist - b.dist)
@@ -67,7 +67,7 @@ export function renderDetail(container, placeId) {
             <div class="food-hint">Tipy na specialty kávu (European Coffee Trip)</div>
             <div class="food-list">
                 ${foodNearby.map(({ food, dist }) => {
-                    const gmapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(food.name + ', ' + food.address + ', Rome')}`;
+                    const gmapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(food.name + ', ' + food.address + ', ' + food.area)}`;
                     return `
                         <a class="food-item" href="${gmapsUrl}" target="_blank" rel="noopener noreferrer">
                             <span class="food-icon">${FOOD_TYPE_EMOJI[food.type] || '☕'}</span>

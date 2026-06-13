@@ -1,3 +1,32 @@
+// Destinácie (zájazdy). Každá zoskupuje niekoľko kategórií.
+const DESTINATIONS = [
+    {
+        id: "rome",
+        name: "Rím a Vatikán",
+        emoji: "🇮🇹",
+        categories: ["vatikan", "rim"],
+        mapCenter: { lat: 41.9028, lon: 12.4750 },
+        mapZoom: 13,
+    },
+    {
+        id: "norway",
+        name: "Nórsko — fjordy",
+        emoji: "🇳🇴",
+        categories: ["bergen", "stavanger", "fjordy"],
+        mapCenter: { lat: 60.30, lon: 6.60 },
+        mapZoom: 7,
+    },
+];
+
+// Pekné názvy kategórií (nahradzuje ternárne výrazy v zobrazeniach)
+const CATEGORY_LABELS = {
+    vatikan: "Vatikán",
+    rim: "Rím",
+    bergen: "Bergen",
+    stavanger: "Stavanger",
+    fjordy: "Fjordy",
+};
+
 const PLACES = [
     // === VATIKÁN ===
     {
@@ -732,7 +761,34 @@ const HOME = {
     emoji: "🏠",
 };
 
+// === Stav aktívnej destinácie ===
+function getActiveDestination() {
+    const id = (typeof localStorage !== "undefined" && localStorage.getItem("activeDestination")) || "rome";
+    return DESTINATIONS.find(d => d.id === id) || DESTINATIONS[0];
+}
+
+function setActiveDestination(id) {
+    if (typeof localStorage !== "undefined") localStorage.setItem("activeDestination", id);
+}
+
+function placesForDestination(dest) {
+    return PLACES.filter(p => dest.categories.includes(p.category));
+}
+
+// Ubytovanie patrí len k rímskej destinácii
+HOME.destination = "rome";
+
 // Make available globally for audio fallback
 window.__PLACES_DATA = PLACES;
+window.__DESTINATIONS = DESTINATIONS;
+window.__CATEGORY_LABELS = CATEGORY_LABELS;
 
-export { PLACES, HOME };
+export {
+    PLACES,
+    HOME,
+    DESTINATIONS,
+    CATEGORY_LABELS,
+    getActiveDestination,
+    setActiveDestination,
+    placesForDestination,
+};

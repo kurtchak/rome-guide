@@ -1,6 +1,8 @@
-// Špeciálne kaviarne a bistrá v Ríme — curated podľa European Coffee Trip.
-// https://europeancoffeetrip.com/rome/
+// Špeciálne kaviarne a bistrá — curated podľa European Coffee Trip.
+// Rím: https://europeancoffeetrip.com/rome/  |  Nórsko: Bergen + Stavanger.
+// Pole `destination` filtruje podniky podľa aktívnej destinácie.
 export const FOOD = [
+    // === Rím ===
     {
         id: 'slow-roma',
         name: 'Slow — Specialty Coffee & Pastry Lab',
@@ -10,6 +12,7 @@ export const FOOD = [
         area: 'Largo Argentina',
         description: 'Moderný specialty espresso bar a pekárna v historickom centre. Kvasnené croissanty, brunch a rýchle obedy.',
         source: 'European Coffee Trip',
+        destination: 'rome',
     },
     {
         id: 'forno-conti',
@@ -20,6 +23,7 @@ export const FOOD = [
         area: 'Esquilino',
         description: 'Remeselná pekáreň s flaky croissantmi a sourdough chlebom. Matcha latte a starostlivo vybraný specialty coffee menu.',
         source: 'European Coffee Trip',
+        destination: 'rome',
     },
     {
         id: 'grani-farine-caffe',
@@ -30,6 +34,7 @@ export const FOOD = [
         area: 'Monteverde',
         description: 'Malá specialty kaviareň bez typického baru — núti spomaliť a dať si čas. Výborné cornetti a sezónne raňajky.',
         source: 'European Coffee Trip',
+        destination: 'rome',
     },
     {
         id: 'sensorio',
@@ -40,6 +45,7 @@ export const FOOD = [
         area: 'Flaminio',
         description: 'Laboratórium so specialty espressom aj filtrom, ručne robené pečivo a brunch. Neďaleko Piazza del Popolo.',
         source: 'European Coffee Trip',
+        destination: 'rome',
     },
     {
         id: 'forno-ritorno',
@@ -50,6 +56,7 @@ export const FOOD = [
         area: 'Testaccio',
         description: 'Moderná pekáreň s kvasnenou pizzou al taglio, croissantami a specialty kávou. Populárny hotspot v Testaccio.',
         source: 'European Coffee Trip',
+        destination: 'rome',
     },
     {
         id: 'te-cioccolateria',
@@ -60,6 +67,7 @@ export const FOOD = [
         area: 'Prati (pri Vatikáne)',
         description: 'Čokoládovňa a kaviareň so severoeurópskou estetikou. Vynikajúce pralinky, torty a specialty coffee.',
         source: 'European Coffee Trip',
+        destination: 'rome',
     },
     {
         id: 'mostro',
@@ -70,6 +78,7 @@ export const FOOD = [
         area: 'Piramide / Ostiense',
         description: 'Maličký kiosk pri Pyramíde Cestia — specialty coffee cez deň, prírodné vína večer. Blízko nášho ubytovania.',
         source: 'European Coffee Trip',
+        destination: 'rome',
     },
     {
         id: 'barnum-roma',
@@ -80,7 +89,106 @@ export const FOOD = [
         area: 'Campo de\' Fiori',
         description: 'Ikonická specialty kaviareň pri Campo de\' Fiori. Francúzske a severoeurópske pečivo, denný brunch. Očakávaj rad.',
         source: 'European Coffee Trip',
+        destination: 'rome',
+    },
+
+    // === Bergen ===
+    {
+        id: 'kaffemisjonen',
+        name: 'Kaffemisjonen',
+        type: 'cafe',
+        coords: { lat: 60.3925, lon: 5.3265 },
+        address: 'Øvre Korskirkeallmenningen 5',
+        area: 'Bergen — centrum',
+        description: 'Jedna z prvých specialty kaviarní v Bergene, kultové miesto pre milovníkov kávy. Vlastné praženie, filter aj espresso.',
+        source: 'European Coffee Trip',
+        destination: 'norway',
+    },
+    {
+        id: 'blom-kaffebar',
+        name: 'Blom Kaffebar',
+        type: 'cafe',
+        coords: { lat: 60.3918, lon: 5.3270 },
+        address: 'Christies gate 1',
+        area: 'Bergen — pri jazere Lille Lungegårdsvann',
+        description: 'Moderná specialty kaviareň so severskou estetikou, výborný filter a domáce pečivo.',
+        source: 'European Coffee Trip',
+        destination: 'norway',
+    },
+    {
+        id: 'bara-kaffebar',
+        name: 'Bara Kaffebar',
+        type: 'cafe',
+        coords: { lat: 60.3889, lon: 5.3270 },
+        address: 'Lille Øvregaten',
+        area: 'Bergen — historické uličky',
+        description: 'Útulná kaviareň v starej drevenej zástavbe nad centrom. Pokojná zastávka pri prechádzke ku Fløyenu.',
+        source: 'curated',
+        destination: 'norway',
+    },
+    {
+        id: 'bryggeloftet',
+        name: 'Bryggeloftet & Stuene',
+        type: 'restaurant',
+        coords: { lat: 60.3968, lon: 5.3232 },
+        address: 'Bryggen 11',
+        area: 'Bergen — Bryggen',
+        description: 'Tradičná reštaurácia priamo na hanzovom nábreží. Nórska klasika — ryby, klippfisk, soby. Pre večeru s atmosférou.',
+        source: 'curated',
+        destination: 'norway',
+    },
+    {
+        id: 'pingvinen',
+        name: 'Pingvinen',
+        type: 'restaurant',
+        coords: { lat: 60.3897, lon: 5.3209 },
+        address: 'Vaskerelven 14',
+        area: 'Bergen — centrum',
+        description: 'Obľúbený lokál s domácou nórskou kuchyňou (raspeball, ryby). Príjemná, neformálna atmosféra.',
+        source: 'curated',
+        destination: 'norway',
+    },
+
+    // === Stavanger ===
+    {
+        id: 'kaffisterne',
+        name: 'Kaffistereo',
+        type: 'cafe',
+        coords: { lat: 58.9703, lon: 5.7330 },
+        address: 'Søregata 15',
+        area: 'Stavanger — centrum',
+        description: 'Specialty kaviareň so starostlivo pripravovaným espressom aj filtrom, blízko farebnej ulice Fargegaten.',
+        source: 'European Coffee Trip',
+        destination: 'norway',
+    },
+    {
+        id: 'boker-og-borst',
+        name: 'Bøker og Børst',
+        type: 'cafe',
+        coords: { lat: 58.9712, lon: 5.7346 },
+        address: 'Øvre Holmegate 32',
+        area: 'Stavanger — Fargegaten',
+        description: 'Kultový bar a kaviareň na farebnej ulici, plný kníh a starého nábytku. Cez deň káva, večer drinky.',
+        source: 'curated',
+        destination: 'norway',
+    },
+    {
+        id: 'renaa-xpress',
+        name: 'Renaa Xpress Sølvberget',
+        type: 'cafe',
+        coords: { lat: 58.9698, lon: 5.7335 },
+        address: 'Sølvberggata 2',
+        area: 'Stavanger — pri katedrále',
+        description: 'Kaviareň a bistro od známeho stavangerského šéfkuchára. Pečivo, raňajky, ľahké obedy a dobrá káva.',
+        source: 'curated',
+        destination: 'norway',
     },
 ];
+
+// Podniky pre danú destináciu (staré záznamy bez poľa berieme ako rímske)
+export function foodForDestination(dest) {
+    const id = dest && dest.id ? dest.id : 'rome';
+    return FOOD.filter(f => (f.destination || 'rome') === id);
+}
 
 window.__FOOD_DATA = FOOD;

@@ -1,4 +1,11 @@
-import { PLACES } from '../data.js';
+import {
+    PLACES,
+    DESTINATIONS,
+    CATEGORY_LABELS,
+    getActiveDestination,
+    setActiveDestination,
+    placesForDestination,
+} from '../data.js';
 
 let currentFilter = 'all';
 let currentContainer = null;
@@ -20,15 +27,30 @@ function formatDistance(m) {
 
 export function renderList(container) {
     currentContainer = container;
+    const dest = getActiveDestination();
+
+    // Ak aktuálny filter nepatrí do tejto destinácie, resetuj na "all"
+    if (currentFilter !== 'all' && !dest.categories.includes(currentFilter)) {
+        currentFilter = 'all';
+    }
+
     container.innerHTML = `
         <div class="header">
             <h1>Audiosprievodca</h1>
-            <p>Rím a Vatikán</p>
+            <p>${dest.name}</p>
+        </div>
+        <div class="dest-switch">
+            ${DESTINATIONS.map(d => `
+                <button class="dest-btn ${d.id === dest.id ? 'active' : ''}" data-dest="${d.id}">
+                    ${d.emoji} ${d.name}
+                </button>
+            `).join('')}
         </div>
         <div class="filters">
             <button class="filter-btn ${currentFilter === 'all' ? 'active' : ''}" data-filter="all">Všetky</button>
-            <button class="filter-btn ${currentFilter === 'vatikan' ? 'active' : ''}" data-filter="vatikan">Vatikán</button>
-            <button class="filter-btn ${currentFilter === 'rim' ? 'active' : ''}" data-filter="rim">Rím</button>
+            ${dest.categories.map(cat => `
+                <button class="filter-btn ${currentFilter === cat ? 'active' : ''}" data-filter="${cat}">${CATEGORY_LABELS[cat] || cat}</button>
+            `).join('')}
         </div>
         <div id="nearby-section"></div>
         <div class="grid">
@@ -41,13 +63,21 @@ export function renderList(container) {
                          loading="lazy">
                     <div class="card-img-placeholder" style="display:none">${place.emoji}</div>
                     <div class="card-label">
-                        <span class="card-category">${place.category === 'vatikan' ? 'Vatikán' : 'Rím'}</span>
+                        <span class="card-category">${CATEGORY_LABELS[place.category] || place.category}</span>
                         ${place.name}
                     </div>
                 </div>
             `).join('')}
         </div>
     `;
+
+    container.querySelectorAll('.dest-btn[data-dest]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            setActiveDestination(btn.dataset.dest);
+            currentFilter = 'all';
+            renderList(container);
+        });
+    });
 
     container.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -79,6 +109,8 @@ function renderNearby(lat, lon) {
     const section = document.getElementById('nearby-section');
     if (!section) return;
 
+    // "V okolí" naprieč všetkými miestami — vzdialené (>50 km) sa odfiltrujú nižšie,
+    // takže v Ríme uvidíš Rím, v Nórsku Nórsko.
     const withDistance = PLACES
         .filter(p => p.coords)
         .map(p => ({
@@ -122,6 +154,8 @@ function renderNearby(lat, lon) {
 }
 
 function getFilteredPlaces() {
-    if (currentFilter === 'all') return PLACES;
-    return PLACES.filter(p => p.category === currentFilter);
+    const dest = getActiveDestination();
+    const inDest = placesForDestination(dest);
+    if (currentFilter === 'all') return inDest;
+    return inDest.filter(p => p.category === currentFilter);
 }
