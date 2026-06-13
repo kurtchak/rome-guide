@@ -74,6 +74,10 @@ IMAGES = {
     "voringsfossen": "Vøringsfossen.jpg",
     "trollstigen": "Trollstigen.jpg",
     "briksdal": "Briksdalsbreen.jpg",
+    # === Nórsko — popri ceste (nové) ===
+    "kossdalen": "Kossdalssvingane.jpg",
+    "latefossen": "Låtefossen.jpg",
+    "roldal-stavkyrkje": "Røldal_stavkyrkje.jpg",
 }
 
 WIKI_API = "https://commons.wikimedia.org/w/api.php"
