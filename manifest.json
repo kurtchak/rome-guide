@@ -1,7 +1,7 @@
 {
-    "name": "Audiosprievodca Rímom a Vatikánom",
+    "name": "Audiosprievodca — Rím a Nórsko",
     "short_name": "Audiosprievodca",
-    "description": "Audio sprievodca po Ríme a Vatikáne v slovenčine",
+    "description": "Audio sprievodca po Ríme, Vatikáne a západnom Nórsku v slovenčine",
     "start_url": "./",
     "scope": "./",
     "display": "standalone",

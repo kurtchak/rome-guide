@@ -1,11 +1,8 @@
-import { PLACES, HOME } from '../data.js';
-import { FOOD } from '../food.js';
+import { HOME, CATEGORY_LABELS, getActiveDestination, placesForDestination } from '../data.js';
+import { foodForDestination } from '../food.js';
 
 const FOOD_TYPE_EMOJI = { cafe: '☕', bakery: '🥐', restaurant: '🍝' };
 const FOOD_TYPE_LABEL = { cafe: 'Kaviareň', bakery: 'Pekáreň', restaurant: 'Reštaurácia' };
-
-const ROME_CENTER = [41.902, 12.480];
-const DEFAULT_ZOOM = 14;
 
 let map = null;
 let userMarker = null;
@@ -25,10 +22,12 @@ export function renderMap(container) {
         return;
     }
 
+    const dest = getActiveDestination();
+
     map = L.map('map', {
         zoomControl: true,
         attributionControl: true,
-    }).setView(ROME_CENTER, DEFAULT_ZOOM);
+    }).setView([dest.mapCenter.lat, dest.mapCenter.lon], dest.mapZoom);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -36,7 +35,7 @@ export function renderMap(container) {
     }).addTo(map);
 
     const bounds = [];
-    for (const place of PLACES) {
+    for (const place of placesForDestination(dest)) {
         if (!place.coords) continue;
         const icon = L.divIcon({
             html: `<div class="map-pin map-pin-${place.category}"><span>${place.emoji}</span></div>`,
@@ -55,7 +54,7 @@ export function renderMap(container) {
                      onerror="this.style.display='none'">
                 <div class="map-popup-body">
                     <div class="map-popup-title">${place.name}</div>
-                    <div class="map-popup-cat">${place.category === 'vatikan' ? 'Vatikán' : 'Rím'}</div>
+                    <div class="map-popup-cat">${CATEGORY_LABELS[place.category] || place.category}</div>
                     <a href="#/miesto/${place.id}" class="map-popup-btn">Otvoriť sprievodcu</a>
                 </div>
             </div>
@@ -64,8 +63,8 @@ export function renderMap(container) {
         bounds.push([place.coords.lat, place.coords.lon]);
     }
 
-    // Airbnb pin
-    if (HOME?.coords) {
+    // Airbnb pin — len pre rímsku destináciu
+    if (HOME?.coords && HOME.destination === dest.id) {
         const homeIcon = L.divIcon({
             html: `<div class="map-pin map-pin-home"><span>${HOME.emoji}</span></div>`,
             className: 'map-pin-wrapper',
@@ -121,7 +120,8 @@ function renderFoodMarkers() {
 
     if (!showFood || !map) return;
 
-    for (const food of FOOD) {
+    const dest = getActiveDestination();
+    for (const food of foodForDestination(dest)) {
         const icon = L.divIcon({
             html: `<div class="map-pin map-pin-food"><span>${FOOD_TYPE_EMOJI[food.type] || '☕'}</span></div>`,
             className: 'map-pin-wrapper',
@@ -130,7 +130,7 @@ function renderFoodMarkers() {
             popupAnchor: [0, -32],
         });
         const marker = L.marker([food.coords.lat, food.coords.lon], { icon }).addTo(map);
-        const gmapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(food.name + ', ' + food.address + ', Rome')}`;
+        const gmapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(food.name + ', ' + food.address + ', ' + food.area)}`;
         marker.bindPopup(`
             <div class="map-popup">
                 <div class="map-popup-body">

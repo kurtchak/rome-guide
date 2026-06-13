@@ -1,6 +1,5 @@
-import { PLACES, HOME } from '../data.js';
+import { HOME, CATEGORY_LABELS, getActiveDestination, placesForDestination } from '../data.js';
 
-const ROME_CENTER = [41.902, 12.480];
 const WALK_MIN_PER_KM = 12; // pešo ~5 km/h
 const DEFAULT_VISIT_MIN = 45; // typický čas na jednom mieste
 
@@ -14,6 +13,22 @@ let startCoords = null;
 let gpsPosition = null;
 let startTimeStr = null; // "HH:MM" alebo null = teraz
 let visitTimes = {}; // {placeId: "HH:MM"}
+
+// Miesta aktívnej destinácie
+function destPlaces() {
+    return placesForDestination(getActiveDestination());
+}
+
+// Odstráni z výberu miesta, ktoré nepatria do aktívnej destinácie
+function pruneSelection() {
+    const ids = new Set(destPlaces().map(p => p.id));
+    for (const id of [...selectedIds]) {
+        if (!ids.has(id)) {
+            selectedIds.delete(id);
+            delete visitTimes[id];
+        }
+    }
+}
 
 function haversine(a, b) {
     const R = 6371000;
@@ -156,6 +171,10 @@ function getStartCoords() {
 }
 
 export function renderRoute(container) {
+    const dest = getActiveDestination();
+    pruneSelection();
+    const hasHome = HOME.destination === dest.id;
+    if (!hasHome && startMode === 'home') startMode = 'gps';
     container.innerHTML = `
         <div class="route-header">
             <h2>Plán trasy</h2>
@@ -165,14 +184,14 @@ export function renderRoute(container) {
                 <label class="route-label">Štart:</label>
                 <select id="start-select" class="route-select">
                     <option value="gps">📍 Moja poloha</option>
-                    <option value="home">🏠 Ubytovanie</option>
+                    ${hasHome ? '<option value="home">🏠 Ubytovanie</option>' : ''}
                     <option value="place">📌 Vybrať miesto</option>
                 </select>
             </div>
             <div id="start-place-picker" class="route-row" style="display:none">
                 <select id="start-place-select" class="route-select">
                     <option value="">-- vyber miesto --</option>
-                    ${PLACES.filter(p => p.coords).map(p => `
+                    ${destPlaces().filter(p => p.coords).map(p => `
                         <option value="${p.id}">${p.emoji} ${p.name}</option>
                     `).join('')}
                 </select>
@@ -183,8 +202,9 @@ export function renderRoute(container) {
                 <button class="route-chip route-chip-clear" id="start-time-now" type="button">Teraz</button>
             </div>
             <div class="route-row route-chips">
-                <button class="route-chip" data-action="add-vatikan">+ Celý Vatikán</button>
-                <button class="route-chip" data-action="add-rim">+ Celý Rím</button>
+                ${dest.categories.map(cat => `
+                    <button class="route-chip" data-action="add-${cat}">+ ${CATEGORY_LABELS[cat] || cat}</button>
+                `).join('')}
                 <button class="route-chip route-chip-clear" data-action="clear">Vymazať</button>
             </div>
         </div>
@@ -207,7 +227,7 @@ export function renderRoute(container) {
 
     document.getElementById('start-place-select').addEventListener('change', (e) => {
         const placeId = e.target.value;
-        const place = PLACES.find(p => p.id === placeId);
+        const place = destPlaces().find(p => p.id === placeId);
         startCoords = place?.coords ? { ...place.coords, label: place.name } : null;
         refreshAll();
     });
@@ -244,13 +264,12 @@ export function renderRoute(container) {
 }
 
 function handleChip(action) {
-    if (action === 'add-vatikan') {
-        PLACES.filter(p => p.category === 'vatikan').forEach(p => selectedIds.add(p.id));
-    } else if (action === 'add-rim') {
-        PLACES.filter(p => p.category === 'rim').forEach(p => selectedIds.add(p.id));
-    } else if (action === 'clear') {
+    if (action === 'clear') {
         selectedIds.clear();
         visitTimes = {};
+    } else if (action.startsWith('add-')) {
+        const cat = action.slice(4);
+        destPlaces().filter(p => p.category === cat && p.coords).forEach(p => selectedIds.add(p.id));
     }
     refreshAll();
 }
@@ -260,7 +279,8 @@ function initMap() {
         document.getElementById('route-map').innerHTML = '<div class="loading">Mapa nie je dostupná</div>';
         return;
     }
-    map = L.map('route-map', { zoomControl: true }).setView(ROME_CENTER, 13);
+    const dest = getActiveDestination();
+    map = L.map('route-map', { zoomControl: true }).setView([dest.mapCenter.lat, dest.mapCenter.lon], dest.mapZoom);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap',
@@ -276,9 +296,10 @@ function refreshPlacesList() {
     const container = document.getElementById('route-places');
     document.getElementById('sel-count').textContent = selectedIds.size;
 
+    const inDest = destPlaces();
     const ordered = [
-        ...PLACES.filter(p => selectedIds.has(p.id)),
-        ...PLACES.filter(p => !selectedIds.has(p.id)),
+        ...inDest.filter(p => selectedIds.has(p.id)),
+        ...inDest.filter(p => !selectedIds.has(p.id)),
     ];
 
     container.innerHTML = ordered.map(place => `
@@ -287,7 +308,7 @@ function refreshPlacesList() {
                 <input type="checkbox" ${selectedIds.has(place.id) ? 'checked' : ''}>
                 <span class="route-item-emoji">${place.emoji}</span>
                 <span class="route-item-name">${place.name}</span>
-                <span class="route-item-cat">${place.category === 'vatikan' ? 'Vatikán' : 'Rím'}</span>
+                <span class="route-item-cat">${CATEGORY_LABELS[place.category] || place.category}</span>
             </label>
             ${selectedIds.has(place.id) ? `
                 <div class="route-item-time">
@@ -341,7 +362,7 @@ function refreshRoute() {
     if (startMarker) { startMarker.remove(); startMarker = null; }
 
     const start = getStartCoords();
-    const selected = PLACES.filter(p => selectedIds.has(p.id) && p.coords);
+    const selected = destPlaces().filter(p => selectedIds.has(p.id) && p.coords);
     const summary = document.getElementById('route-summary');
 
     if (!start && selected.length === 0) {
