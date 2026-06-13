@@ -778,7 +778,7 @@ const PLACES = [
         id: "floyen",
         name: "Fløyen a lanovka Fløibanen",
         category: "bergen",
-        coords: { lat: 60.3936, lon: 5.3508 },
+        coords: { lat: 60.3901, lon: 5.3394 },
         image: "img/places/floyen.jpg",
         emoji: "🚠",
         info: {
@@ -802,7 +802,7 @@ const PLACES = [
         id: "troldhaugen",
         name: "Troldhaugen — dom Edvarda Griega",
         category: "bergen",
-        coords: { lat: 60.3318, lon: 5.3284 },
+        coords: { lat: 60.3196, lon: 5.3294 },
         image: "img/places/troldhaugen.jpg",
         emoji: "🎹",
         info: {
@@ -850,7 +850,7 @@ const PLACES = [
         id: "bergenhus",
         name: "Pevnosť Bergenhus a Håkonova sieň",
         category: "bergen",
-        coords: { lat: 60.3986, lon: 5.317 },
+        coords: { lat: 60.4001, lon: 5.3173 },
         image: "img/places/bergenhus.jpg",
         emoji: "🏰",
         info: {
@@ -874,7 +874,7 @@ const PLACES = [
         id: "mariakirken",
         name: "Kostol Panny Márie (Mariakirken)",
         category: "bergen",
-        coords: { lat: 60.3978, lon: 5.3196 },
+        coords: { lat: 60.3989, lon: 5.3233 },
         image: "img/places/mariakirken.jpg",
         emoji: "⛪",
         info: {
@@ -898,7 +898,7 @@ const PLACES = [
         id: "ulriken",
         name: "Ulriken 643",
         category: "bergen",
-        coords: { lat: 60.376, lon: 5.392 },
+        coords: { lat: 60.3775, lon: 5.3871 },
         image: "img/places/ulriken.jpg",
         emoji: "🚡",
         info: {
@@ -922,7 +922,7 @@ const PLACES = [
         id: "fantoft",
         name: "Drevený kostol Fantoft",
         category: "bergen",
-        coords: { lat: 60.3349, lon: 5.337 },
+        coords: { lat: 60.3368, lon: 5.352 },
         image: "img/places/fantoft.jpg",
         emoji: "🪵",
         info: {
@@ -946,7 +946,7 @@ const PLACES = [
         id: "gamle-stavanger",
         name: "Staré Stavanger",
         category: "stavanger",
-        coords: { lat: 58.969, lon: 5.728 },
+        coords: { lat: 58.9712, lon: 5.729 },
         image: "img/places/gamle-stavanger.jpg",
         emoji: "🏘️",
         info: {
@@ -969,7 +969,7 @@ const PLACES = [
         id: "stavanger-domkirken",
         name: "Katedrála v Stavangeri",
         category: "stavanger",
-        coords: { lat: 58.97, lon: 5.733 },
+        coords: { lat: 58.9698, lon: 5.7332 },
         image: "img/places/stavanger-domkirken.jpg",
         emoji: "⛪",
         info: {
@@ -1017,7 +1017,7 @@ const PLACES = [
         id: "sverd-i-fjell",
         name: "Meče v skale (Sverd i fjell)",
         category: "stavanger",
-        coords: { lat: 58.8896, lon: 5.728 },
+        coords: { lat: 58.9414, lon: 5.6713 },
         image: "img/places/sverd-i-fjell.jpg",
         emoji: "⚔️",
         info: {
@@ -1040,7 +1040,7 @@ const PLACES = [
         id: "oljemuseet",
         name: "Nórske ropné múzeum",
         category: "stavanger",
-        coords: { lat: 58.974, lon: 5.731 },
+        coords: { lat: 58.9746, lon: 5.7332 },
         image: "img/places/oljemuseet.jpg",
         emoji: "🛢️",
         info: {
@@ -1064,7 +1064,7 @@ const PLACES = [
         id: "preikestolen",
         name: "Preikestolen (Kazateľnica)",
         category: "stavanger",
-        coords: { lat: 58.9864, lon: 6.1904 },
+        coords: { lat: 58.9864, lon: 6.1886 },
         image: "img/places/preikestolen.jpg",
         emoji: "🪨",
         info: {
@@ -1111,7 +1111,7 @@ const PLACES = [
         id: "kjerag",
         name: "Kjerag a Kjeragbolten",
         category: "stavanger",
-        coords: { lat: 59.0347, lon: 6.5933 },
+        coords: { lat: 59.0337, lon: 6.5933 },
         image: "img/places/kjerag.jpg",
         emoji: "🧗",
         info: {
@@ -1135,7 +1135,7 @@ const PLACES = [
         id: "geirangerfjord",
         name: "Geirangerfjord",
         category: "fjordy",
-        coords: { lat: 62.101, lon: 7.006 },
+        coords: { lat: 62.1019, lon: 7.2072 },
         image: "img/places/geirangerfjord.jpg",
         emoji: "🏞️",
         info: {
@@ -1159,7 +1159,7 @@ const PLACES = [
         id: "naeroyfjord",
         name: "Nærøyfjord",
         category: "fjordy",
-        coords: { lat: 60.917, lon: 6.933 },
+        coords: { lat: 60.8777, lon: 6.8379 },
         image: "img/places/naeroyfjord.jpg",
         emoji: "🚣",
         info: {
@@ -1183,7 +1183,7 @@ const PLACES = [
         id: "flam",
         name: "Flåm a železnica Flåmsbana",
         category: "fjordy",
-        coords: { lat: 60.8625, lon: 7.1138 },
+        coords: { lat: 60.8616, lon: 7.1151 },
         image: "img/places/flam.jpg",
         emoji: "🚂",
         info: {
@@ -1229,7 +1229,7 @@ const PLACES = [
         id: "voringsfossen",
         name: "Vodopád Vøringsfossen",
         category: "fjordy",
-        coords: { lat: 60.4264, lon: 7.2533 },
+        coords: { lat: 60.4269, lon: 7.2511 },
         image: "img/places/voringsfossen.jpg",
         emoji: "💦",
         info: {
@@ -1253,7 +1253,7 @@ const PLACES = [
         id: "trollstigen",
         name: "Trollstigen (Cesta trolov)",
         category: "fjordy",
-        coords: { lat: 62.4575, lon: 7.671 },
+        coords: { lat: 62.4575, lon: 7.663 },
         image: "img/places/trollstigen.jpg",
         emoji: "🛣️",
         info: {
@@ -1277,7 +1277,7 @@ const PLACES = [
         id: "briksdal",
         name: "Ľadovec Briksdalsbreen",
         category: "fjordy",
-        coords: { lat: 61.665, lon: 6.887 },
+        coords: { lat: 61.6658, lon: 6.89 },
         image: "img/places/briksdal.jpg",
         emoji: "❄️",
         info: {
@@ -1301,7 +1301,7 @@ const PLACES = [
         id: "kossdalen",
         name: "Kossdalen (Kossdalsvingane)",
         category: "bergen",
-        coords: { lat: 60.505, lon: 5.452 },
+        coords: { lat: 60.5752, lon: 5.4776 },
         image: "img/places/kossdalen.jpg",
         emoji: "🚗",
         info: {
@@ -1325,7 +1325,7 @@ const PLACES = [
         id: "latefossen",
         name: "Vodopád Låtefossen",
         category: "fjordy",
-        coords: { lat: 59.9789, lon: 6.5829 },
+        coords: { lat: 59.9484, lon: 6.5885 },
         image: "img/places/latefossen.jpg",
         emoji: "💧",
         info: {
@@ -1349,7 +1349,7 @@ const PLACES = [
         id: "roldal-stavkyrkje",
         name: "Drevený kostol Røldal",
         category: "fjordy",
-        coords: { lat: 59.829, lon: 6.824 },
+        coords: { lat: 59.8309, lon: 6.8227 },
         image: "img/places/roldal-stavkyrkje.jpg",
         emoji: "⛪",
         info: {

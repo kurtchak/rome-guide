@@ -125,7 +125,7 @@ NORWAY_PLACES = [
         "id": "floyen",
         "name": "Fløyen a lanovka Fløibanen",
         "category": "bergen",
-        "coords": (60.3936, 5.3508),
+        "coords": (60.3901, 5.3394),
         "emoji": "🚠",
         "info": {
             "Otvorené": "lanovka Fløibanen 1918",
@@ -161,7 +161,7 @@ NORWAY_PLACES = [
         "id": "troldhaugen",
         "name": "Troldhaugen — dom Edvarda Griega",
         "category": "bergen",
-        "coords": (60.3318, 5.3284),
+        "coords": (60.3196, 5.3294),
         "emoji": "🎹",
         "info": {
             "Postavené": "1885 (Grieg tu žil do 1907)",
@@ -293,7 +293,7 @@ NORWAY_PLACES = [
         "id": "bergenhus",
         "name": "Pevnosť Bergenhus a Håkonova sieň",
         "category": "bergen",
-        "coords": (60.3986, 5.3170),
+        "coords": (60.4001, 5.3173),
         "emoji": "🏰",
         "info": {
             "Postavené": "Håkonova sieň 1247–1261",
@@ -327,7 +327,7 @@ NORWAY_PLACES = [
         "id": "mariakirken",
         "name": "Kostol Panny Márie (Mariakirken)",
         "category": "bergen",
-        "coords": (60.3978, 5.3196),
+        "coords": (60.3989, 5.3233),
         "emoji": "⛪",
         "info": {
             "Postavené": "okolo 1130–1180",
@@ -361,7 +361,7 @@ NORWAY_PLACES = [
         "id": "ulriken",
         "name": "Ulriken 643",
         "category": "bergen",
-        "coords": (60.3760, 5.3920),
+        "coords": (60.3775, 5.3871),
         "emoji": "🚡",
         "info": {
             "Výška": "643 m n. m. (najvyšší zo 7 vrchov)",
@@ -396,7 +396,7 @@ NORWAY_PLACES = [
         "id": "fantoft",
         "name": "Drevený kostol Fantoft",
         "category": "bergen",
-        "coords": (60.3349, 5.3370),
+        "coords": (60.3368, 5.352),
         "emoji": "🪵",
         "info": {
             "Postavené": "pôvodne ~1150 (presun 1883, obnova 1997)",
@@ -433,7 +433,7 @@ NORWAY_PLACES = [
         "id": "gamle-stavanger",
         "name": "Staré Stavanger",
         "category": "stavanger",
-        "coords": (58.9690, 5.7280),
+        "coords": (58.9712, 5.729),
         "emoji": "🏘️",
         "info": {
             "Postavené": "18.–19. storočie",
@@ -505,7 +505,7 @@ NORWAY_PLACES = [
         "id": "stavanger-domkirken",
         "name": "Katedrála v Stavangeri",
         "category": "stavanger",
-        "coords": (58.9700, 5.7330),
+        "coords": (58.9698, 5.7332),
         "emoji": "⛪",
         "info": {
             "Postavené": "okolo 1125",
@@ -574,7 +574,7 @@ NORWAY_PLACES = [
         "id": "sverd-i-fjell",
         "name": "Meče v skale (Sverd i fjell)",
         "category": "stavanger",
-        "coords": (58.8896, 5.7280),
+        "coords": (58.9414, 5.6713),
         "emoji": "⚔️",
         "info": {
             "Postavené": "1983",
@@ -649,7 +649,7 @@ NORWAY_PLACES = [
         "id": "oljemuseet",
         "name": "Nórske ropné múzeum",
         "category": "stavanger",
-        "coords": (58.9740, 5.7310),
+        "coords": (58.9746, 5.7332),
         "emoji": "🛢️",
         "info": {
             "Otvorené": "1999",
@@ -684,7 +684,7 @@ NORWAY_PLACES = [
         "id": "preikestolen",
         "name": "Preikestolen (Kazateľnica)",
         "category": "stavanger",
-        "coords": (58.9864, 6.1904),
+        "coords": (58.9864, 6.1886),
         "emoji": "🪨",
         "info": {
             "Výška": "604 m nad Lysefjordom",
@@ -795,7 +795,7 @@ NORWAY_PLACES = [
         "id": "kjerag",
         "name": "Kjerag a Kjeragbolten",
         "category": "stavanger",
-        "coords": (59.0347, 6.5933),
+        "coords": (59.0337, 6.5933),
         "emoji": "🧗",
         "info": {
             "Výška": "vrchol ~1084 m; balvan ~984 m nad fjordom",
@@ -833,7 +833,7 @@ NORWAY_PLACES = [
         "id": "geirangerfjord",
         "name": "Geirangerfjord",
         "category": "fjordy",
-        "coords": (62.1010, 7.0060),
+        "coords": (62.1019, 7.2072),
         "emoji": "🏞️",
         "info": {
             "Dĺžka": "asi 15 km (rameno Storfjordu)",
@@ -928,7 +928,7 @@ NORWAY_PLACES = [
         "id": "naeroyfjord",
         "name": "Nærøyfjord",
         "category": "fjordy",
-        "coords": (60.9170, 6.9330),
+        "coords": (60.8777, 6.8379),
         "emoji": "🚣",
         "info": {
             "Dĺžka": "asi 17 km (rameno Sognefjordu)",
@@ -964,7 +964,7 @@ NORWAY_PLACES = [
         "id": "flam",
         "name": "Flåm a železnica Flåmsbana",
         "category": "fjordy",
-        "coords": (60.8625, 7.1138),
+        "coords": (60.8616, 7.1151),
         "emoji": "🚂",
         "info": {
             "Otvorené": "železnica Flåmsbana 1940",
@@ -1115,7 +1115,7 @@ NORWAY_PLACES = [
         "id": "voringsfossen",
         "name": "Vodopád Vøringsfossen",
         "category": "fjordy",
-        "coords": (60.4264, 7.2533),
+        "coords": (60.4269, 7.2511),
         "emoji": "💦",
         "info": {
             "Výška": "celkový pád 182 m (voľný pád 145 m)",
@@ -1150,7 +1150,7 @@ NORWAY_PLACES = [
         "id": "trollstigen",
         "name": "Trollstigen (Cesta trolov)",
         "category": "fjordy",
-        "coords": (62.4575, 7.6710),
+        "coords": (62.4575, 7.663),
         "emoji": "🛣️",
         "info": {
             "Otvorené": "1936",
@@ -1184,7 +1184,7 @@ NORWAY_PLACES = [
         "id": "briksdal",
         "name": "Ľadovec Briksdalsbreen",
         "category": "fjordy",
-        "coords": (61.6650, 6.8870),
+        "coords": (61.6658, 6.89),
         "emoji": "❄️",
         "info": {
             "Časť": "rameno ľadovca Jostedalsbreen",
@@ -1220,7 +1220,7 @@ NORWAY_PLACES = [
         "id": "kossdalen",
         "name": "Kossdalen (Kossdalsvingane)",
         "category": "bergen",
-        "coords": (60.5050, 5.4520),  # približné — over pred nasadením
+        "coords": (60.5752, 5.4776),  # Hosanger / Mjøsvågen na Osterøy
         "emoji": "🚗",
         "info": {
             "Poloha": "ostrov Osterøy pri Bergene",
@@ -1307,7 +1307,7 @@ NORWAY_PLACES = [
         "id": "latefossen",
         "name": "Vodopád Låtefossen",
         "category": "fjordy",
-        "coords": (59.9789, 6.5829),
+        "coords": (59.9484, 6.5885),
         "emoji": "💧",
         "info": {
             "Výška": "celkový pád približne 165 m",
@@ -1392,7 +1392,7 @@ NORWAY_PLACES = [
         "id": "roldal-stavkyrkje",
         "name": "Drevený kostol Røldal",
         "category": "fjordy",
-        "coords": (59.8290, 6.8240),
+        "coords": (59.8309, 6.8227),
         "emoji": "⛪",
         "info": {
             "Postavené": "okolo polovice 13. storočia",
