@@ -47,6 +47,33 @@ IMAGES = {
     "cirkus-maximus": "Circus_Maximus_Rome.jpg",
     "svata-schody": "Scala_Santa_1.jpg",
     "piazza-del-popolo": "Piazza_del_Popolo_Rome.jpg",
+    # === Nórsko — Bergen ===
+    # POZN.: názvy súborov sú návrhy; pred spustením over, že existujú na Commons.
+    "bryggen": "Bryggen_Hanseatic_Wharf_Bergen.jpg",
+    "floyen": "View_from_Fløyen,_Bergen.jpg",
+    "fisketorget": "Fisketorget_Bergen.jpg",
+    "bergenhus": "Bergenhus_festning.jpg",
+    "mariakirken": "Mariakirken_Bergen.jpg",
+    "troldhaugen": "Troldhaugen_Edvard_Grieg.jpg",
+    "ulriken": "Ulriken_Bergen.jpg",
+    "fantoft": "Fantoft_stavkirke.jpg",
+    # === Nórsko — Stavanger ===
+    "gamle-stavanger": "Gamle_Stavanger.jpg",
+    "stavanger-domkirken": "Stavanger_Cathedral.jpg",
+    "fargegaten": "Øvre_Holmegate_Stavanger.jpg",
+    "sverd-i-fjell": "Sverd_i_fjell_Stavanger.jpg",
+    "oljemuseet": "Norwegian_Petroleum_Museum.jpg",
+    "preikestolen": "Preikestolen_2016.jpg",
+    "lysefjord": "Lysefjorden.jpg",
+    "kjerag": "Kjeragbolten.jpg",
+    # === Nórsko — fjordy ===
+    "geirangerfjord": "Geirangerfjord.jpg",
+    "naeroyfjord": "Nærøyfjord.jpg",
+    "flam": "Flåm_Flåmsbana.jpg",
+    "trolltunga": "Trolltunga_Norway.jpg",
+    "voringsfossen": "Vøringsfossen.jpg",
+    "trollstigen": "Trollstigen.jpg",
+    "briksdal": "Briksdalsbreen.jpg",
 }
 
 WIKI_API = "https://commons.wikimedia.org/w/api.php"
