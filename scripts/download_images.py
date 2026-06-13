@@ -69,7 +69,7 @@ IMAGES = {
     # === Nórsko — Stavanger ===
     "gamle-stavanger": "Gamle_Stavanger.jpg",
     "stavanger-domkirken": "Stavanger_Cathedral.jpg",
-    "fargegaten": "search:Øvre Holmegate Stavanger colourful street",
+    "fargegaten": "search:Øvre Holmegate Stavanger",
     "sverd-i-fjell": "search:Sverd i fjell Hafrsfjord monument",
     "oljemuseet": "search:Norwegian Petroleum Museum Stavanger",
     "preikestolen": "search:Preikestolen Pulpit Rock Lysefjord",
@@ -78,7 +78,7 @@ IMAGES = {
     # === Nórsko — fjordy ===
     "geirangerfjord": "Geirangerfjord.jpg",
     "naeroyfjord": "Nærøyfjord.jpg",
-    "flam": "search:Flåm village Aurlandsfjord railway",
+    "flam": "search:Flåm Aurlandsfjord",
     "trolltunga": "search:Trolltunga rock formation Norway",
     "voringsfossen": "Vøringsfossen.jpg",
     "trollstigen": "Trollstigen.jpg",
