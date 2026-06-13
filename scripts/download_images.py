@@ -10,7 +10,15 @@ import requests
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 
-HEADERS = {"User-Agent": "AudiosprievodcaBot/1.0 (educational project)"}
+# Wikimedia vyžaduje popisný User-Agent s kontaktom — bez neho server
+# výrazne agresívnejšie rate-limituje (HTTP 429), najmä z cloud/CI IP adries.
+HEADERS = {
+    "User-Agent": (
+        "RomeGuideBot/1.0 "
+        "(https://github.com/kurtchak/rome-guide; kurtcha@gmail.com) "
+        "Python-requests"
+    )
+}
 
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "img", "places")
 ICON_DIR = os.path.join(os.path.dirname(__file__), "..", "img", "icons")
@@ -48,36 +56,37 @@ IMAGES = {
     "svata-schody": "Scala_Santa_1.jpg",
     "piazza-del-popolo": "Piazza_del_Popolo_Rome.jpg",
     # === Nórsko — Bergen ===
-    # POZN.: názvy súborov sú návrhy; pred spustením over, že existujú na Commons.
-    "bryggen": "Bryggen_Hanseatic_Wharf_Bergen.jpg",
-    "floyen": "View_from_Fløyen,_Bergen.jpg",
-    "fisketorget": "Fisketorget_Bergen.jpg",
-    "bergenhus": "Bergenhus_festning.jpg",
-    "mariakirken": "Mariakirken_Bergen.jpg",
-    "troldhaugen": "Troldhaugen_Edvard_Grieg.jpg",
+    # Hodnota "search:<dotaz>" => obrázok sa vyhľadá cez Commons fulltext
+    # (použité tam, kde presný názov súboru nepoznáme).
+    "bryggen": "search:Bryggen Bergen Hanseatic wharf",
+    "floyen": "search:Fløyen Bergen view from",
+    "fisketorget": "search:Fisketorget Bergen fish market",
+    "bergenhus": "search:Bergenhus fortress Bergen",
+    "mariakirken": "search:Mariakirken Bergen church",
+    "troldhaugen": "search:Troldhaugen Grieg villa",
     "ulriken": "Ulriken_Bergen.jpg",
     "fantoft": "Fantoft_stavkirke.jpg",
     # === Nórsko — Stavanger ===
     "gamle-stavanger": "Gamle_Stavanger.jpg",
     "stavanger-domkirken": "Stavanger_Cathedral.jpg",
-    "fargegaten": "Øvre_Holmegate_Stavanger.jpg",
-    "sverd-i-fjell": "Sverd_i_fjell_Stavanger.jpg",
-    "oljemuseet": "Norwegian_Petroleum_Museum.jpg",
-    "preikestolen": "Preikestolen_2016.jpg",
+    "fargegaten": "search:Øvre Holmegate Stavanger colourful street",
+    "sverd-i-fjell": "search:Sverd i fjell Hafrsfjord monument",
+    "oljemuseet": "search:Norwegian Petroleum Museum Stavanger",
+    "preikestolen": "search:Preikestolen Pulpit Rock Lysefjord",
     "lysefjord": "Lysefjorden.jpg",
     "kjerag": "Kjeragbolten.jpg",
     # === Nórsko — fjordy ===
     "geirangerfjord": "Geirangerfjord.jpg",
     "naeroyfjord": "Nærøyfjord.jpg",
-    "flam": "Flåm_Flåmsbana.jpg",
-    "trolltunga": "Trolltunga_Norway.jpg",
+    "flam": "search:Flåm village Aurlandsfjord railway",
+    "trolltunga": "search:Trolltunga rock formation Norway",
     "voringsfossen": "Vøringsfossen.jpg",
     "trollstigen": "Trollstigen.jpg",
     "briksdal": "Briksdalsbreen.jpg",
     # === Nórsko — popri ceste (nové) ===
     "kossdalen": "Kossdalssvingane.jpg",
-    "latefossen": "Låtefossen.jpg",
-    "roldal-stavkyrkje": "Røldal_stavkyrkje.jpg",
+    "latefossen": "search:Låtefossen waterfall",
+    "roldal-stavkyrkje": "search:Røldal stave church stavkyrkje",
 }
 
 WIKI_API = "https://commons.wikimedia.org/w/api.php"
@@ -103,6 +112,47 @@ def get_image_url(filename):
             # Preferuj thumbnail URL (predgenerovaný, nie rate-limited)
             return imageinfo[0].get("thumburl") or imageinfo[0]["url"]
     return None
+
+
+def search_image_url(query):
+    """Nájde najvhodnejší obrázok cez Commons fulltext vyhľadávanie.
+
+    Vyberie prvý JPEG/PNG na šírku (landscape) s rozumným rozlíšením,
+    vráti jeho thumbnail URL (800px). Použité, keď nepoznáme presný názov.
+    """
+    params = {
+        "action": "query",
+        "format": "json",
+        "generator": "search",
+        "gsrsearch": query,
+        "gsrnamespace": 6,  # File:
+        "gsrlimit": 15,
+        "prop": "imageinfo",
+        "iiprop": "url|size|mime",
+        "iiurlwidth": MAX_WIDTH,
+    }
+    resp = requests.get(WIKI_API, params=params, headers=HEADERS, timeout=30)
+    data = resp.json()
+    pages = data.get("query", {}).get("pages", {})
+
+    # Zachovaj poradie relevancie podľa "index"
+    candidates = sorted(pages.values(), key=lambda p: p.get("index", 999))
+    best = None
+    for page in candidates:
+        info = page.get("imageinfo", [{}])[0]
+        mime = info.get("mime", "")
+        if mime not in ("image/jpeg", "image/png"):
+            continue
+        w, h = info.get("width", 0), info.get("height", 0)
+        url = info.get("thumburl") or info.get("url")
+        if not url:
+            continue
+        # Preferuj landscape s aspoň ~800px šírkou
+        if w >= h and w >= 800:
+            return url
+        if best is None:
+            best = url
+    return best
 
 
 def download_and_resize(url, output_path):
@@ -174,9 +224,12 @@ def main():
             continue
 
         print(f"  Sťahujem {place_id}...", end=" ", flush=True)
-        for attempt in range(3):
+        for attempt in range(5):
             try:
-                url = get_image_url(wiki_filename)
+                if wiki_filename.startswith("search:"):
+                    url = search_image_url(wiki_filename[len("search:"):])
+                else:
+                    url = get_image_url(wiki_filename)
                 if not url:
                     print("CHYBA: URL nenájdená")
                     break
@@ -186,8 +239,8 @@ def main():
                 print(f"OK ({w}x{h}, {size_kb} KB)")
                 break
             except requests.exceptions.HTTPError as e:
-                if e.response.status_code == 429 and attempt < 2:
-                    wait = 15 * (attempt + 1)
+                if e.response.status_code == 429 and attempt < 4:
+                    wait = 20 * (attempt + 1)
                     print(f"rate limited, čakám {wait}s...", end=" ", flush=True)
                     time.sleep(wait)
                 else:
@@ -196,7 +249,7 @@ def main():
             except Exception as e:
                 print(f"CHYBA: {e}")
                 break
-        time.sleep(3)  # pauza medzi requestmi
+        time.sleep(6)  # pauza medzi requestmi (šetrnejšie k Wikimedia)
 
     print(f"\nHotovo! Obrázky uložené v {IMG_DIR}")
 
