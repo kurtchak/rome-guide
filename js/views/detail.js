@@ -1,4 +1,4 @@
-import { PLACES, getActiveDestination } from '../data.js';
+import { PLACES, getActiveDestination, removeCustomPlace } from '../data.js';
 import { foodForDestination } from '../food.js';
 import * as audio from '../audio.js';
 
@@ -127,6 +127,7 @@ export function renderDetail(container, placeId) {
             <div class="guide-text" id="guide-text">${place.texts.short}</div>
             ${foodSection}
             ${legendsSection}
+            ${place.custom ? `<button class="custom-delete" id="custom-delete-btn">🗑 Zmazať toto miesto</button>` : ''}
         </div>
         <div class="audio-bar">
             <div class="audio-progress" id="audio-progress">
@@ -146,6 +147,17 @@ export function renderDetail(container, placeId) {
         audio.stop();
         location.hash = '/';
     });
+
+    const delBtn = document.getElementById('custom-delete-btn');
+    if (delBtn) {
+        delBtn.addEventListener('click', () => {
+            if (confirm(`Naozaj zmazať miesto „${place.name}"?`)) {
+                audio.stop();
+                removeCustomPlace(place.id);
+                location.hash = '/';
+            }
+        });
+    }
 
     container.querySelectorAll('.tier-btn').forEach(btn => {
         btn.addEventListener('click', () => {

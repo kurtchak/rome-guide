@@ -25,6 +25,7 @@ js/
     detail.js         – detail miesta, audio, legendy, jedlo v okolí
     map.js            – Leaflet mapa (markery aktívnej destinácie)
     route.js          – plánovač trasy s časmi vstupu
+    add.js            – formulár na pridanie vlastného miesta
 audio/                – predgenerované MP3 (`<id>-30s.mp3`, …, `<id>-legend-<lid>.mp3`)
 img/places/           – obrázky miest (`<id>.jpg`)
 scripts/              – Python nástroje (obsah, obrázky, audio)
@@ -65,6 +66,15 @@ sa filtrujú podľa `getActiveDestination()`.
 5. **Audio**: `python3 scripts/generate_audio.py` (hlas `sk-SK-LukasNeural`, vyžaduje sieť;
    generuje len chýbajúce MP3). Nórske názvy číta slovenský hlas v origináli.
 6. **PWA**: zvýš `CACHE_NAME` v `sw.js`, ak treba uprav `name`/`description` v `manifest.json`.
+
+### Pridanie miesta priamo v appke
+
+Bez úpravy kódu sa dá miesto pridať aj z mobilu: v zozname tlačidlo
+**„➕ Pridať vlastné miesto"** (alebo `#/pridat`). Vyplní sa názov, destinácia,
+kategória, emoji, voliteľné súradnice (alebo „Použiť moju polohu") a popis.
+Miesto sa uloží do `localStorage` (kľúč `customPlaces`), hneď sa zobrazí v zozname,
+na mape aj v trase a v detaile sa dá zmazať. Audio sa pri vlastných miestach číta
+cez `speechSynthesis` (žiadne MP3 netreba).
 
 ## Lokálne spustenie
 
