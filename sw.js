@@ -1,4 +1,4 @@
-const CACHE_NAME = 'audiosprievodca-v13';
+const CACHE_NAME = 'audiosprievodca-v14';
 
 const SHELL_ASSETS = [
     './',
@@ -13,6 +13,7 @@ const SHELL_ASSETS = [
     './js/views/detail.js',
     './js/views/map.js',
     './js/views/route.js',
+    './js/views/add.js',
     './manifest.json'
 ];
 

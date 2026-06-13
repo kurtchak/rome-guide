@@ -98,6 +98,136 @@ body {
     border-color: var(--accent);
 }
 
+/* Pridať vlastné miesto — odkaz v zozname */
+.add-place-row {
+    display: flex;
+    justify-content: center;
+    padding: 0 16px 14px;
+}
+
+.add-place-link {
+    display: inline-block;
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px dashed var(--text-muted);
+    padding: 9px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.add-place-link:active { background: var(--bg-surface); }
+
+/* Formulár na pridanie miesta */
+.add-form {
+    padding: 64px 16px 40px;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.add-form h1 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.add-hint {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.add-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.add-input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    background: var(--bg-card);
+    border: 1px solid var(--bg-surface);
+    color: var(--text);
+    padding: 11px 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.add-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.add-textarea { resize: vertical; font-family: inherit; }
+
+.add-coords {
+    display: flex;
+    gap: 12px;
+}
+
+.add-label-half { flex: 1; }
+
+.add-locate-btn {
+    display: inline-block;
+    background: var(--bg-surface);
+    color: var(--text);
+    border: none;
+    padding: 9px 16px;
+    border-radius: 18px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    margin: -4px 0 18px;
+}
+
+.add-error {
+    color: var(--accent-light);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin-bottom: 10px;
+}
+
+.add-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.add-cancel, .add-save {
+    flex: 1;
+    padding: 13px;
+    border-radius: 12px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-cancel {
+    background: var(--bg-card);
+    color: var(--text-muted);
+}
+
+.add-save {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Zmazanie vlastného miesta v detaile */
+.custom-delete {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent-light);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
 /* Place grid */
 .grid {
     display: grid;

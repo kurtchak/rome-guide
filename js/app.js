@@ -2,6 +2,7 @@ import { renderList } from './views/list.js';
 import { renderDetail } from './views/detail.js';
 import { renderMap, cleanupMap } from './views/map.js';
 import { renderRoute, cleanupRoute } from './views/route.js';
+import { renderAdd } from './views/add.js';
 import * as audio from './audio.js';
 import { startTracking } from './proximity.js';
 
@@ -23,6 +24,10 @@ function route() {
         audio.stop();
         renderRoute(app);
         currentRoute = 'route';
+    } else if (hash === '#/pridat') {
+        audio.stop();
+        renderAdd(app);
+        currentRoute = 'add';
     } else if (match) {
         renderDetail(app, match[1]);
         currentRoute = 'detail';
@@ -37,7 +42,7 @@ function route() {
 
 function updateTabbar() {
     const body = document.body;
-    if (currentRoute === 'detail') {
+    if (currentRoute === 'detail' || currentRoute === 'add') {
         body.classList.remove('tabbar-visible');
     } else {
         body.classList.add('tabbar-visible');

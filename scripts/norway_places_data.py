@@ -125,7 +125,7 @@ NORWAY_PLACES = [
         "id": "floyen",
         "name": "Fløyen a lanovka Fløibanen",
         "category": "bergen",
-        "coords": (60.3936, 5.3508),
+        "coords": (60.3901, 5.3394),
         "emoji": "🚠",
         "info": {
             "Otvorené": "lanovka Fløibanen 1918",
@@ -161,7 +161,7 @@ NORWAY_PLACES = [
         "id": "troldhaugen",
         "name": "Troldhaugen — dom Edvarda Griega",
         "category": "bergen",
-        "coords": (60.3318, 5.3284),
+        "coords": (60.3196, 5.3294),
         "emoji": "🎹",
         "info": {
             "Postavené": "1885 (Grieg tu žil do 1907)",
@@ -293,7 +293,7 @@ NORWAY_PLACES = [
         "id": "bergenhus",
         "name": "Pevnosť Bergenhus a Håkonova sieň",
         "category": "bergen",
-        "coords": (60.3986, 5.3170),
+        "coords": (60.4001, 5.3173),
         "emoji": "🏰",
         "info": {
             "Postavené": "Håkonova sieň 1247–1261",
@@ -327,7 +327,7 @@ NORWAY_PLACES = [
         "id": "mariakirken",
         "name": "Kostol Panny Márie (Mariakirken)",
         "category": "bergen",
-        "coords": (60.3978, 5.3196),
+        "coords": (60.3989, 5.3233),
         "emoji": "⛪",
         "info": {
             "Postavené": "okolo 1130–1180",
@@ -361,7 +361,7 @@ NORWAY_PLACES = [
         "id": "ulriken",
         "name": "Ulriken 643",
         "category": "bergen",
-        "coords": (60.3760, 5.3920),
+        "coords": (60.3775, 5.3871),
         "emoji": "🚡",
         "info": {
             "Výška": "643 m n. m. (najvyšší zo 7 vrchov)",
@@ -396,7 +396,7 @@ NORWAY_PLACES = [
         "id": "fantoft",
         "name": "Drevený kostol Fantoft",
         "category": "bergen",
-        "coords": (60.3349, 5.3370),
+        "coords": (60.3368, 5.352),
         "emoji": "🪵",
         "info": {
             "Postavené": "pôvodne ~1150 (presun 1883, obnova 1997)",
@@ -433,7 +433,7 @@ NORWAY_PLACES = [
         "id": "gamle-stavanger",
         "name": "Staré Stavanger",
         "category": "stavanger",
-        "coords": (58.9690, 5.7280),
+        "coords": (58.9712, 5.729),
         "emoji": "🏘️",
         "info": {
             "Postavené": "18.–19. storočie",
@@ -505,7 +505,7 @@ NORWAY_PLACES = [
         "id": "stavanger-domkirken",
         "name": "Katedrála v Stavangeri",
         "category": "stavanger",
-        "coords": (58.9700, 5.7330),
+        "coords": (58.9698, 5.7332),
         "emoji": "⛪",
         "info": {
             "Postavené": "okolo 1125",
@@ -574,7 +574,7 @@ NORWAY_PLACES = [
         "id": "sverd-i-fjell",
         "name": "Meče v skale (Sverd i fjell)",
         "category": "stavanger",
-        "coords": (58.8896, 5.7280),
+        "coords": (58.9414, 5.6713),
         "emoji": "⚔️",
         "info": {
             "Postavené": "1983",
@@ -649,7 +649,7 @@ NORWAY_PLACES = [
         "id": "oljemuseet",
         "name": "Nórske ropné múzeum",
         "category": "stavanger",
-        "coords": (58.9740, 5.7310),
+        "coords": (58.9746, 5.7332),
         "emoji": "🛢️",
         "info": {
             "Otvorené": "1999",
@@ -684,7 +684,7 @@ NORWAY_PLACES = [
         "id": "preikestolen",
         "name": "Preikestolen (Kazateľnica)",
         "category": "stavanger",
-        "coords": (58.9864, 6.1904),
+        "coords": (58.9864, 6.1886),
         "emoji": "🪨",
         "info": {
             "Výška": "604 m nad Lysefjordom",
@@ -795,7 +795,7 @@ NORWAY_PLACES = [
         "id": "kjerag",
         "name": "Kjerag a Kjeragbolten",
         "category": "stavanger",
-        "coords": (59.0347, 6.5933),
+        "coords": (59.0337, 6.5933),
         "emoji": "🧗",
         "info": {
             "Výška": "vrchol ~1084 m; balvan ~984 m nad fjordom",
@@ -833,7 +833,7 @@ NORWAY_PLACES = [
         "id": "geirangerfjord",
         "name": "Geirangerfjord",
         "category": "fjordy",
-        "coords": (62.1010, 7.0060),
+        "coords": (62.1019, 7.2072),
         "emoji": "🏞️",
         "info": {
             "Dĺžka": "asi 15 km (rameno Storfjordu)",
@@ -928,7 +928,7 @@ NORWAY_PLACES = [
         "id": "naeroyfjord",
         "name": "Nærøyfjord",
         "category": "fjordy",
-        "coords": (60.9170, 6.9330),
+        "coords": (60.8777, 6.8379),
         "emoji": "🚣",
         "info": {
             "Dĺžka": "asi 17 km (rameno Sognefjordu)",
@@ -964,7 +964,7 @@ NORWAY_PLACES = [
         "id": "flam",
         "name": "Flåm a železnica Flåmsbana",
         "category": "fjordy",
-        "coords": (60.8625, 7.1138),
+        "coords": (60.8616, 7.1151),
         "emoji": "🚂",
         "info": {
             "Otvorené": "železnica Flåmsbana 1940",
@@ -1115,7 +1115,7 @@ NORWAY_PLACES = [
         "id": "voringsfossen",
         "name": "Vodopád Vøringsfossen",
         "category": "fjordy",
-        "coords": (60.4264, 7.2533),
+        "coords": (60.4269, 7.2511),
         "emoji": "💦",
         "info": {
             "Výška": "celkový pád 182 m (voľný pád 145 m)",
@@ -1150,7 +1150,7 @@ NORWAY_PLACES = [
         "id": "trollstigen",
         "name": "Trollstigen (Cesta trolov)",
         "category": "fjordy",
-        "coords": (62.4575, 7.6710),
+        "coords": (62.4575, 7.663),
         "emoji": "🛣️",
         "info": {
             "Otvorené": "1936",
@@ -1184,7 +1184,7 @@ NORWAY_PLACES = [
         "id": "briksdal",
         "name": "Ľadovec Briksdalsbreen",
         "category": "fjordy",
-        "coords": (61.6650, 6.8870),
+        "coords": (61.6658, 6.89),
         "emoji": "❄️",
         "info": {
             "Časť": "rameno ľadovca Jostedalsbreen",
@@ -1211,6 +1211,267 @@ NORWAY_PLACES = [
             "long": "",  # TODO
         },
         "legends": [],  # TODO
+    },
+
+    # ============================================================
+    # POPRI CESTE (Osterøy + trasa Odda → Stavanger, E134)
+    # ============================================================
+    {
+        "id": "kossdalen",
+        "name": "Kossdalen (Kossdalsvingane)",
+        "category": "bergen",
+        "coords": (60.5752, 5.4776),  # Hosanger / Mjøsvågen na Osterøy
+        "emoji": "🚗",
+        "info": {
+            "Poloha": "ostrov Osterøy pri Bergene",
+            "Serpentíny": "sedemnásť ostrých zákrut",
+            "Sloh": "historická horská cesta",
+            "Vstup": "zadarmo (verejná cesta)",
+            "Web": "https://www.visitbergen.com",
+        },
+        "texts": {
+            "short": (
+                "Kossdalen, presnejšie Kossdalsvingane, je stará horská cesta na ostrove Osterøy neďaleko "
+                "Bergenu. Sedemnásť tesných serpentín sa tu šplhá po strmom svahu a patrí k pamätihodnostiam "
+                "ostrova. Dnes je obľúbeným cieľom motoristov, cyklistov aj milovníkov starých inžinierskych diel."
+            ),
+            "medium": (
+                "Kossdalsvingane, čiže serpentíny v údolí Kossdalen, sú historická cesta na ostrove Osterøy, "
+                "ktorý leží len kúsok severovýchodne od Bergenu. Osterøy je jeden z najväčších vnútrozemských "
+                "ostrovov Nórska a po stáročia žil vlastným pokojným životom medzi fjordmi.\n\n"
+                "Cesta zdoláva strmý svah sedemnástimi ostrými zákrutami naukladanými tesne nad sebou. V čase, keď "
+                "vznikla, bolo vybudovať takúto cestu cez skalnatý kopec nemalý výkon — robotníci ju tvarovali "
+                "prevažne ručne, kameň po kameni, a museli vyriešiť odvodnenie aj oporné múry, aby serpentíny "
+                "vydržali nórske zimy.\n\n"
+                "Dnes už cesta neslúži ako jediná spojnica, ale stala sa vyhľadávanou zaujímavosťou. Z jej zákrut "
+                "sa otvárajú výhľady na okolitú krajinu a serpentíny si obľúbili cyklisti, motorkári aj vodiči "
+                "historických áut, ktorí si sem prídu vyskúšať jazdu starou horskou cestou."
+            ),
+            "long": (
+                "Kossdalen je údolie na ostrove Osterøy, ktorý leží severovýchodne od Bergenu a od pevniny ho "
+                "delia len úzke ramená fjordov. Preslávila ho stará cesta Kossdalsvingane — sedemnásť tesných "
+                "serpentín, ktoré sa šplhajú po strmom svahu a stali sa malou ikonou ostrovnej dopravnej histórie.\n\n"
+                "Osterøy je jeden z najväčších vnútrozemských ostrovov v krajine. Po stáročia tu ľudia žili z "
+                "poľnohospodárstva, rybolovu a remesiel a jednotlivé usadlosti boli pre kopcovitý terén často "
+                "ťažko dostupné. Práve preto malo budovanie ciest na ostrove veľký význam — spájalo dovtedy "
+                "odlúčené dvory a dediny so zvyškom Osterøy.\n\n"
+                "Vybudovať cestu cez strmý svah Kossdalenu bolo náročné dielo. Robotníci ju tvarovali prevažne "
+                "ručne, museli odlamovať skalu, stavať oporné múry a vyriešiť odvádzanie vody, aby zákruty "
+                "prečkali dažde a mrazy. Výsledkom je sedemnásť serpentín naukladaných tesne nad sebou, ktoré "
+                "stúpajú po kopci ako schodisko — pohľad, ktorý priťahuje obdiv dodnes.\n\n"
+                "S výstavbou modernejších ciest a tunelov stratili staré serpentíny svoju pôvodnú dopravnú úlohu. "
+                "Namiesto toho však získali nový život ako turistická a športová zaujímavosť. Cyklisti si tu "
+                "preverujú nohy v prudkom stúpaní, motorkári a vodiči historických vozidiel si vychutnávajú jazdu "
+                "zákrutami a z vyšších serpentín sa otvárajú výhľady na ostrovnú krajinu a vodu v okolí.\n\n"
+                "Pre návštevníka Bergenu sú Osterøy a Kossdalsvingane tipom, ako sa vyhnúť davom a zažiť "
+                "pokojnejšiu, vidiecku tvár západného Nórska — krajinu malých fariem, drevených domov a starých "
+                "ciest, ktoré ľudia kedysi vytesali do svahov vlastnými rukami."
+            ),
+        },
+        "legends": [
+            {
+                "id": "cesta-vytesana-do-svahu",
+                "title": "Cesta vytesaná do svahu",
+                "text": (
+                    "V časoch, keď vznikali serpentíny Kossdalsvingane, neexistovali ťažké stroje, na ktoré sme "
+                    "dnes zvyknutí. Cesty cez strmé nórske svahy sa stavali predovšetkým ľudskou silou — robotníci "
+                    "lámali skalu, odvážali kamenie a ručne ukladali oporné múry, ktoré držia zákruty nad sebou.\n\n"
+                    "Sedemnásť serpentín nad sebou nie je len efektný pohľad. Každá zákruta musela byť dosť mierna, "
+                    "aby ju zvládli kone s vozmi a neskôr prvé automobily, a zároveň dosť tesná, aby sa cesta "
+                    "vmestila na úzky svah. Bola to úloha pre skúsených staviteľov a roky práce.\n\n"
+                    "Práve preto sa na takéto staré cesty v Nórsku hľadí s úctou. Nie sú to len pruhy asfaltu, ale "
+                    "pamätníky doby, keď spojiť dve doliny znamenalo mesiace driny — a keď každá nová cesta "
+                    "menila život celého ostrova."
+                ),
+            },
+            {
+                "id": "zivot-na-osteroy",
+                "title": "Ostrov medzi fjordmi",
+                "text": (
+                    "Osterøy je jeden z najväčších vnútrozemských ostrovov Nórska, no zároveň pokojné, vidiecke "
+                    "miesto, ktoré turisti často míňajú cestou k slávnejším fjordom. Po stáročia tu ľudia žili z "
+                    "pôdy, lesa a vody a ostrov bol povestný aj remeslami — najmä tkáčstvom a výrobou látok.\n\n"
+                    "Kopcovitý terén znamenal, že mnohé dvory a dediny boli dlho odlúčené a spojenie medzi nimi "
+                    "záviselo od lodí a úzkych horských ciest. Serpentíny ako Kossdalsvingane preto neboli len "
+                    "atrakciou — boli životnou tepnou, ktorá ľuďom umožnila dostať sa za susedmi, na trh či do kostola.\n\n"
+                    "Dnes je Osterøy príjemným únikom z ruchu Bergenu. Pre toho, kto chce vidieť tichšiu tvár "
+                    "západného Nórska — malé farmy, drevené domy a staré cesty vinúce sa krajinou — sú ostrov a "
+                    "jeho serpentíny ideálnou zastávkou."
+                ),
+            },
+        ],
+    },
+
+    # ------------------------------------------------------------
+    {
+        "id": "latefossen",
+        "name": "Vodopád Låtefossen",
+        "category": "fjordy",
+        "coords": (59.9484, 6.5885),
+        "emoji": "💧",
+        "info": {
+            "Výška": "celkový pád približne 165 m",
+            "Zvláštnosť": "dva prúdy spájajúce sa nad starým kamenným mostom",
+            "Poloha": "cesta E134 pri Odde (Hardanger)",
+            "Vstup": "zadarmo",
+            "Web": "https://www.visitnorway.com",
+        },
+        "texts": {
+            "short": (
+                "Låtefossen je jeden z najznámejších vodopádov Hardangeru. Z jazera nad ním padajú dva mohutné "
+                "prúdy, ktoré sa v búrlivom oblaku triešte spoja tesne nad starým kamenným mostom. Cesta E134 pri "
+                "Odde vedie priamo popri ňom, takže vodná triešť dopadá až na okoloidúce autá."
+            ),
+            "medium": (
+                "Vodopád Låtefossen patrí k najobľúbenejším zastávkam na ceste cez Hardanger smerom k Odde. Jeho "
+                "zvláštnosťou je, že nepadá jediným prúdom — z jazera Lotevatnet sa rútia dva samostatné vodopády, "
+                "ktoré sa v spodnej časti zrazia a spoja do jediného burácajúceho oblaku vodnej triešte.\n\n"
+                "Pod vodopádom sa klenie starý kamenný most so šiestimi oblúkmi, postavený v polovici 19. storočia. "
+                "Spojené prúdy sa valia tesne popod neho a most tak stojí priamo v dosahu vodnej triešte. Cesta E134 "
+                "vedie cez tento most, takže autá prechádzajú doslova pár metrov od padajúcej vody.\n\n"
+                "Práve táto blízkosť robí z Låtefossenu taký pôsobivý zážitok. Za vyššieho stavu vody sa na most a "
+                "okoloidúcich znáša jemná dažďová triešť a hukot vodopádu prehluší všetko naokolo. Je to ideálne "
+                "miesto na krátke zastavenie cestou k Trolltunge a ďalej na juh."
+            ),
+            "long": (
+                "Vodopád Låtefossen je jednou z najznámejších prírodných zastávok na ceste cez región Hardanger, "
+                "neďaleko mestečka Odda. Patrí k tým miestam, ktoré sa nedajú minúť — cesta totiž vedie priamo "
+                "popod jeho prúdy a hukot padajúcej vody upozorní na vodopád skôr, než ho vôbec uvidíte.\n\n"
+                "Jeho najväčšou zvláštnosťou sú dva prúdy. Voda z horského jazera Lotevatnet sa nerúti dolu jediným "
+                "korytom, ale rozdeľuje sa na dva samostatné vodopády, ktoré padajú vedľa seba. V spodnej časti sa "
+                "oba prúdy zrazia a spoja do jedného búrlivého oblaku vodnej triešte a peny. Celkovo voda klesá o "
+                "približne stošesťdesiatpäť metrov.\n\n"
+                "Pod vodopádom sa klenie pôvabný kamenný most so šiestimi oblúkmi, ktorý pochádza z polovice 19. "
+                "storočia. Spojené prúdy sa valia tesne popod most a cesta E134 cez neho prechádza priamo v dosahu "
+                "vodnej triešte. Za vyššieho stavu vody, najmä na jar pri topení snehu, sa na vozidlá aj odvážnych "
+                "chodcov znáša jemný dážď a sklá áut treba utierať stieračmi.\n\n"
+                "Práve toto spojenie — dvojitý vodopád, starý kamenný most a cesta vedúca priamo cez oblak triešte "
+                "— robí z Låtefossenu nezabudnuteľnú zastávku. Mnoho návštevníkov tu zastaví len na pár minút, aby "
+                "sa odfotili, pocítili silu vody na vlastnej koži a započúvali sa do jej hukotu.\n\n"
+                "Låtefossen leží na trase, ktorá spája Hardanger s Oddou, Trolltungou a ďalej s juhom krajiny. "
+                "Pre cestovateľa mieriaceho k fjordom či do okolia Stavangeru je ideálnym príkladom toho, koľko "
+                "prírodných divov sa v západnom Nórsku skrýva priamo pri ceste."
+            ),
+        },
+        "legends": [
+            {
+                "id": "sestoblukovy-most",
+                "title": "Most v dosahu vodnej triešte",
+                "text": (
+                    "Pod vodopádom Låtefossen sa klenie starý kamenný most so šiestimi oblúkmi, ktorý postavili "
+                    "v polovici 19. storočia. Patrí k pekným ukážkam staviteľského umenia tej doby — kamenné "
+                    "oblúkové mosty sa v Nórsku stavali tak, aby vydržali silu horských riek aj tlak ľadu.\n\n"
+                    "Výnimočné je, kde most stojí. Spojené prúdy vodopádu sa valia tesne popod jeho oblúky, takže "
+                    "most aj cesta, ktorá cez neho vedie, sú priamo v dosahu vodnej triešte. Za vysokej vody sa na "
+                    "vozidlá znáša jemný dážď a hukot vody úplne pohltí okolie.\n\n"
+                    "Že takýto starý most dodnes nesie hlavnú cestu a odoláva neustálemu náporu vodopádu, je samo "
+                    "osebe malým divom. Pre návštevníkov sa stal súčasťou zážitku — prejsť autom pár metrov od "
+                    "burácajúceho vodopádu po moste starom vyše stopäťdesiat rokov."
+                ),
+            },
+            {
+                "id": "dva-prudy",
+                "title": "Dva prúdy, jeden vodopád",
+                "text": (
+                    "Meno aj sláva Låtefossenu sú spojené s tým, že voda z jazera Lotevatnet nepadá dolu jediným "
+                    "prúdom. Tok sa nad zrázom rozdeľuje na dva samostatné vodopády, ktoré sa rútia vedľa seba po "
+                    "skalnej stene.\n\n"
+                    "V spodnej časti sa oba prúdy zrazia a v búrlivom oblaku peny sa spoja do jedného. Tento stret "
+                    "vytvára obrovské množstvo vodnej triešte, ktorá sa rozptyľuje do okolia a za slnka v nej často "
+                    "zažiari dúha.\n\n"
+                    "Práve dvojitý charakter robí z Låtefossenu jeden z najfotografovanejších vodopádov Hardangeru. "
+                    "Sila, s akou sa dva prúdy stretnú tesne nad starým mostom, je pohľad, ktorý sa návštevníkom "
+                    "vrýva do pamäti."
+                ),
+            },
+        ],
+    },
+
+    # ------------------------------------------------------------
+    {
+        "id": "roldal-stavkyrkje",
+        "name": "Drevený kostol Røldal",
+        "category": "fjordy",
+        "coords": (59.8309, 6.8227),
+        "emoji": "⛪",
+        "info": {
+            "Postavené": "okolo polovice 13. storočia",
+            "Sloh": "stredoveký drevený kostol",
+            "Význam": "Slávne stredoveké pútnické miesto",
+            "Vstup": "sezónne, vstupné",
+            "Web": "https://www.visitnorway.com",
+        },
+        "texts": {
+            "short": (
+                "Drevený kostol v Røldale na ceste E134 patrí k najstarším v kraji a v stredoveku bol jedným z "
+                "najslávnejších pútnických miest severu. Pútnikov sem lákal zázračný kríž, o ktorom sa hovorilo, "
+                "že raz do roka — v noci na Jána — roní liečivý pot."
+            ),
+            "medium": (
+                "Drevený kostol v Røldale stojí v horskej dedine na starej ceste medzi Hardangerom a juhom "
+                "Nórska, dnešnej E134. Pochádza približne z polovice 13. storočia a patrí k najstarším "
+                "zachovaným kostolom v širokom okolí.\n\n"
+                "V stredoveku bol Røldal jedným z najvýznamnejších pútnických miest severnej Európy. Pútnikov sem "
+                "priťahoval drevený kríž s postavou Krista, o ktorom kolovala povesť, že v noci na sviatok svätého "
+                "Jána — uprostred leta — roní na čele kvapky liečivého potu. Chorí ním dúfali v uzdravenie.\n\n"
+                "Pozoruhodné je, že púte do Røldalu pokračovali ešte dlho po reformácii, ktorá podobné zvyky inde "
+                "zakázala. Odľahlosť horskej dediny umožnila, že sa stará tradícia udržala dlhšie než kdekoľvek "
+                "inde v krajine. Kríž sa v kostole zachoval dodnes."
+            ),
+            "long": (
+                "Drevený kostol v Røldale, po nórsky Røldal stavkyrkje, stojí v odľahlej horskej dedine na starej "
+                "ceste, ktorá spája Hardanger s juhom Nórska — dnešnej hlavnej ceste E134. Pochádza približne z "
+                "polovice 13. storočia a patrí k najstarším zachovaným kostolom v širokom okolí.\n\n"
+                "Najväčšiu slávu mu však priniesli stredoveké púte. Røldal sa stal jedným z najvýznamnejších "
+                "pútnických miest severnej Európy a prúdili sem ľudia z celého Nórska aj zo zahraničia. Dôvodom "
+                "bol drevený krucifix — kríž s postavou ukrižovaného Krista —, o ktorom sa rozprávalo, že má "
+                "zázračnú moc.\n\n"
+                "Podľa povesti kríž raz do roka, v noci na sviatok svätého Jána uprostred leta, roní na Kristovom "
+                "čele kvapky liečivého potu. Pútnici, najmä chorí a zúfalí, sa snažili tohto potu dotknúť alebo "
+                "ním pomazať choré miesto v nádeji na uzdravenie. Okolo kostola sa tak rozvinul celý pútnický "
+                "život s vlastnými zvykmi a obradmi.\n\n"
+                "Mimoriadne je, že púte do Røldalu pokračovali aj dlho po reformácii v 16. storočí, ktorá uctievanie "
+                "podobných relikvií a zázračných obrazov inde tvrdo potlačila. Vďaka odľahlosti horskej dediny a "
+                "sile miestnej tradície sa sem ľudia tajne vyberali ešte stáročia po tom, čo cirkevné autority "
+                "púte oficiálne zakázali. Røldal sa tak stal jedným z mála miest, kde stredoveká ľudová zbožnosť "
+                "prežila až do novoveku.\n\n"
+                "Kostol aj jeho slávny kríž sa zachovali dodnes a pripomínajú dobu, keď viera, nádej a putovanie "
+                "patrili k životu obyčajných ľudí. Pre cestovateľa, ktorý mieri od Hardangeru cez hory na juh "
+                "k okoliu Stavangeru, je Røldal pokojnou a pôsobivou zastávkou s nečakane bohatým príbehom."
+            ),
+        },
+        "legends": [
+            {
+                "id": "potiaci-sa-kriz",
+                "title": "Kríž, ktorý sa potil",
+                "text": (
+                    "Srdcom slávy Røldalu bol drevený krucifix — kríž s postavou ukrižovaného Krista. Podľa "
+                    "stáročnej povesti sa na ňom raz do roka, v noci na sviatok svätého Jána uprostred leta, "
+                    "objavovali na Kristovom čele kvapky vlhkosti, ktoré ľudia pokladali za liečivý pot.\n\n"
+                    "Chorí a zúfalí pútnici sa snažili tohto potu dotknúť kúskom látky a potom ním pomazať choré "
+                    "miesto, oči či boľavé údy, v nádeji na zázračné uzdravenie. Správy o uzdraveniach sa šírili "
+                    "ďalej a priťahovali do odľahlej horskej dediny ďalších a ďalších ľudí.\n\n"
+                    "Či už bol pot výsledkom kondenzácie vlhkosti na chladnom dreve, alebo niečoho iného, pre "
+                    "stredovekých pútnikov bol znamením milosti. Práve okolo tohto kríža sa zrodila povesť, ktorá "
+                    "urobila z Røldalu jedno z najznámejších pútnických miest severu."
+                ),
+            },
+            {
+                "id": "puti-aj-po-reformacii",
+                "title": "Púte, ktoré neprestali",
+                "text": (
+                    "Keď v 16. storočí zasiahla Nórsko reformácia, nové cirkevné poriadky tvrdo potlačili "
+                    "uctievanie zázračných krížov, relikvií a obrazov. Pútnické miesta po celej krajine zanikli "
+                    "a staré zvyky sa mali navždy skončiť.\n\n"
+                    "Røldal však bol výnimkou. Horská dedina ležala tak odľahlo a tradícia bola taká silná, že "
+                    "ľudia sem chodili k zázračnému krížu aj naďalej — často tajne a napriek zákazom. Hovorí sa, "
+                    "že púte k Røldalu prežili ešte stáročia po tom, čo inde dávno utíchli.\n\n"
+                    "Práve preto má Røldal v dejinách nórskej ľudovej zbožnosti zvláštne miesto. Je dôkazom, ako "
+                    "hlboko dokáže byť viera zakorenená v ľuďoch a v konkrétnom mieste — a ako ťažko sa dá vykoreniť "
+                    "zvyk, ktorý sa dedí z pokolenia na pokolenie."
+                ),
+            },
+        ],
     },
 
 ]

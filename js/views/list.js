@@ -52,6 +52,9 @@ export function renderList(container) {
                 <button class="filter-btn ${currentFilter === cat ? 'active' : ''}" data-filter="${cat}">${CATEGORY_LABELS[cat] || cat}</button>
             `).join('')}
         </div>
+        <div class="add-place-row">
+            <a href="#/pridat" class="add-place-link">➕ Pridať vlastné miesto</a>
+        </div>
         <div id="nearby-section"></div>
         <div class="grid">
             ${getFilteredPlaces().map(place => `
