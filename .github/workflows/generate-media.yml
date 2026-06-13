@@ -1,0 +1,60 @@
+name: Generovanie médií (audio + obrázky)
+
+# Beží na GitHub runneri, ktorý má plný prístup na internet (Wikimedia, Edge TTS),
+# takže médiá vieme vygenerovať aj keď to lokálne / v Claude Code sandboxe nejde.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/new-session-gzgp2f]
+    # Spustí sa len pri zmene skriptov/dát — nie pri commitnutí samotných médií
+    # (audio/** a img/** sú zámerne vynechané, aby nevznikol nekonečný cyklus).
+    paths:
+      - '.github/workflows/generate-media.yml'
+      - 'scripts/**'
+      - 'js/data.js'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Inštalácia závislostí
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generovanie audia (edge-tts, sk-SK)
+        # Preskočí už existujúce MP3, vygeneruje len chýbajúce
+        run: python3 scripts/generate_audio.py
+
+      - name: Sťahovanie obrázkov (Wikimedia Commons)
+        # Niektoré nové názvy súborov sú odhady — zlyhanie jednotlivého
+        # obrázka nesmie zhodiť celý beh.
+        continue-on-error: true
+        run: python3 scripts/download_images.py
+
+      - name: Commit a push vygenerovaných médií
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audio img
+          if git diff --staged --quiet; then
+            echo "Žiadne nové médiá na commit."
+          else
+            git commit -m "Generované médiá: nórske audio (sk-SK) a obrázky
+
+          Vygenerované automaticky cez GitHub Actions runner."
+            git push origin HEAD:${{ github.ref_name }}
+          fi
