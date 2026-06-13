@@ -95,9 +95,18 @@ def main():
     with open(DATA_JS, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Identifikuj uzatváracie `]` PLACES poľa (pred `;\n\n// Ubytovanie...`)
-    closing_pattern = re.compile(r"\n\];\s*\n")
+    # Identifikuj uzatváracie `];` PLACES poľa — je nasledované komentárom
+    # `// Ubytovanie`. (Pozor: v súbore je aj skoršie `];` poľa DESTINATIONS,
+    # preto kotvíme na komentár za PLACES, nie na prvé `];`.)
+    closing_pattern = re.compile(r"\n\];\s*\n\s*\n//\s*Ubytovanie")
     m = closing_pattern.search(content)
+    if not m:
+        # fallback: posledné `];` pred window.__PLACES_DATA
+        anchor = content.rfind("\n];", 0, content.find("window.__PLACES_DATA"))
+        if anchor == -1:
+            print("CHYBA: nenájdené uzatváranie PLACES poľa")
+            return
+        m = re.compile(r"\n\];").search(content, anchor)
     if not m:
         print("CHYBA: nenájdené uzatváranie PLACES poľa")
         return
